@@ -21,6 +21,9 @@
 
     # Content-Security-Policy
     #   script-src  : eigene Skripte + Google-Tag (gtag.js)
+    #                 googleadservices.com ist zwingend: gtag.js lädt für AW-IDs
+    #                 zusätzlich conversion_async.js von dort nach. Fehlt der
+    #                 Eintrag, blockiert der Browser die Conversion-Messung.
     #   connect-src : Formspree (Formularversand) + Google (Conversion-Pings)
     #   img-src     : eigene Bilder, data:-URIs (Icons im CSS) + Google-Tracking-Pixel
     #   'unsafe-inline' bei style-src: nötig für die wenigen inline-Styles im HTML
@@ -30,12 +33,12 @@
       form-action 'self' https://formspree.io;
       frame-ancestors 'self';
       object-src 'none';
-      script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com;
+      script-src 'self' https://www.googletagmanager.com https://www.googleadservices.com https://www.google-analytics.com;
       style-src 'self' 'unsafe-inline';
-      img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://www.google.de https://googleads.g.doubleclick.net;
+      img-src 'self' data: https://www.googletagmanager.com https://www.googleadservices.com https://www.google-analytics.com https://www.google.com https://www.google.de https://googleads.g.doubleclick.net https://stats.g.doubleclick.net;
       font-src 'self' data:;
-      connect-src 'self' https://formspree.io https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://www.google.com https://googleads.g.doubleclick.net;
-      frame-src https://td.doubleclick.net https://www.googletagmanager.com;
+      connect-src 'self' https://formspree.io https://www.googletagmanager.com https://www.googleadservices.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://www.google.com https://www.google.de https://googleads.g.doubleclick.net;
+      frame-src https://td.doubleclick.net https://www.googletagmanager.com https://www.googleadservices.com;
       upgrade-insecure-requests;
     """
 

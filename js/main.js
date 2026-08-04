@@ -52,33 +52,61 @@
   if (jahr) jahr.textContent = String(new Date().getFullYear());
 
   /* ----------------------------------------------------------------
-     4) CONVERSION-HELFER
-     Feuert eine Google-Ads-Conversion – aber nur, wenn
-       a) der Nutzer eingewilligt hat  UND
-       b) in js/config.js echte IDs hinterlegt sind.
-     Solange Platzhalter drinstehen, passiert bewusst nichts.
+     4) CONVERSION-HELFER (Google Ads)
+
+     Feuert   gtag('event', 'conversion', { send_to: 'AW-…/LABEL' })
+     – aber nur, wenn ALLE drei Bedingungen erfüllt sind:
+       a) der Nutzer hat im Cookie-Banner eingewilligt,
+       b) das Google-Tag ist geladen (window.gtag vorhanden),
+       c) in js/config.js steht ein echtes Label statt eines Platzhalters.
+
+     Punkt c) verhindert, dass unvollständige send_to-Werte an Google gehen
+     und dort als Fehler oder Falschmessung auftauchen.
      ---------------------------------------------------------------- */
+  function istPlatzhalter(wert) {
+    // Platzhalter sind: 'FORMULAR_LABEL', 'ANRUF_LABEL', 'WHATSAPP_LABEL'
+    return !wert || /_LABEL$/.test(wert) || wert.indexOf('TODO') === 0;
+  }
+
   function conversionFeuern(typ) {
-    // a) Einwilligung prüfen
+    if (!typ) return;
+
+    // a) Einwilligung
     if (typeof window.hatEinwilligung === 'function' && !window.hatEinwilligung()) return;
+    // b) Tag geladen
     if (typeof window.gtag !== 'function') return;
 
     var adsId = CFG.adsConversionId || '';
     var label = (CFG.conversionLabels || {})[typ] || '';
 
-    // b) Platzhalter erkennen und abbrechen
+    // c) Platzhalter erkennen und still abbrechen
     if (!adsId || adsId.indexOf('AW-X') === 0) return;
-    if (!label || label.indexOf('TODO_') === 0) return;
+    if (istPlatzhalter(label)) return;
 
     window.gtag('event', 'conversion', { send_to: adsId + '/' + label });
   }
   window.conversionFeuern = conversionFeuern;
 
-  // An alle Elemente mit data-conversion="anruf" / "whatsapp" hängen.
-  // Wichtig: Wir blockieren den Klick NICHT – der Anruf startet sofort.
+  /* --- Klick-Auslöser ---------------------------------------------
+     Erkennt Anruf- und WhatsApp-Klicks zuverlässig, auch wenn irgendwo
+     mal das data-conversion-Attribut vergessen wurde:
+       - jedes data-conversion="…"
+       - jeder Link, der mit tel: beginnt (inkl. Floating-Call-Button)
+       - jeder Link auf wa.me / whatsapp.com
+     Der Klick wird NICHT abgefangen – Anruf bzw. WhatsApp startet sofort.
+     ---------------------------------------------------------------- */
+  function typFuerElement(el) {
+    if (el.hasAttribute('data-conversion')) return el.getAttribute('data-conversion');
+
+    var href = (el.getAttribute('href') || '').toLowerCase();
+    if (href.indexOf('tel:') === 0) return 'anruf';
+    if (href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1) return 'whatsapp';
+    return null;
+  }
+
   document.addEventListener('click', function (e) {
-    var el = e.target.closest('[data-conversion]');
-    if (el) conversionFeuern(el.getAttribute('data-conversion'));
+    var el = e.target.closest('a[href], [data-conversion]');
+    if (el) conversionFeuern(typFuerElement(el));
   });
 
   /* ----------------------------------------------------------------

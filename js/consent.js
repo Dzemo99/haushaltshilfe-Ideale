@@ -86,6 +86,10 @@
     }
     tagGeladen = true;
 
+    // Entspricht dem Standard-Snippet von Google:
+    //   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-…"></script>
+    //   gtag('js', new Date()); gtag('config', 'AW-…');
+    // – nur eben erst dann, wenn es erlaubt ist.
     var s = document.createElement('script');
     s.async = true;
     s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(hauptId || ga4Id);
@@ -104,6 +108,10 @@
       ad_personalization: 'granted',
       analytics_storage: 'granted',
     });
+    googleTagLaden();
+  } else if (CFG.tagVorEinwilligungLaden === true) {
+    // Optionale Variante (siehe js/config.js): Tag lädt sofort, bleibt aber
+    // wegen der oben gesetzten Defaults auf "denied" – also ohne Werbe-Cookies.
     googleTagLaden();
   }
 

@@ -8,19 +8,29 @@ window.SITE_CONFIG = {
 
   /* ----------------------------------------------------------------
      Google Ads
-     Zu finden in Google Ads unter:  Tools -> Messung -> Conversions
      ---------------------------------------------------------------- */
 
-  // TODO: Conversion-ID eintragen, Format: 'AW-1234567890'
-  // Solange hier 'AW-XXXXXXXXXX' steht, wird KEIN Google-Tag geladen.
-  adsConversionId: 'AW-XXXXXXXXXX',
+  // Conversion-ID – eingetragen und aktiv.
+  adsConversionId: 'AW-17763019825',
 
-  // TODO: Conversion-Labels eintragen (das Kürzel HINTER dem Schrägstrich).
-  // Beispiel: Google Ads zeigt 'AW-1234567890/AbCdEfGhIj' -> hier 'AbCdEfGhIj'
+  /* ----------------------------------------------------------------
+     >>> HIER DIE ZWEI LABELS EINSETZEN <<<
+
+     Wo finde ich sie?
+       Google Ads -> Tools -> Messung -> Conversions
+       -> Conversion-Aktion anklicken -> "Tag einrichten"
+       -> dort steht: send_to: 'AW-17763019825/AbCdEfGhIjKl'
+          Gebraucht wird NUR der Teil hinter dem Schrägstrich.
+
+     Beispiel:  formular: 'AbCdEfGhIjKl',
+
+     Solange hier noch "..._LABEL" steht, wird diese Conversion bewusst
+     NICHT gefeuert – so entstehen keine falschen Messwerte.
+     ---------------------------------------------------------------- */
   conversionLabels: {
-    formular: 'TODO_LABEL_FORMULAR',   // Conversion-Aktion "Lead / Formularanfrage"
-    anruf:    'TODO_LABEL_ANRUF',      // Conversion-Aktion "Anruf (Klick auf Telefonnummer)"
-    whatsapp: 'TODO_LABEL_WHATSAPP',   // Conversion-Aktion "WhatsApp-Klick" (optional)
+    formular: 'FORMULAR_LABEL',    // <-- Conversion-Aktion "Lead / Formularanfrage"
+    anruf:    'ANRUF_LABEL',       // <-- Conversion-Aktion "Anruf (Klick auf Telefonnummer)"
+    whatsapp: 'WHATSAPP_LABEL',    // <-- optional: Conversion-Aktion "WhatsApp-Klick"
   },
 
   /* ----------------------------------------------------------------
@@ -33,7 +43,22 @@ window.SITE_CONFIG = {
   ga4MeasurementId: '',
 
   /* ----------------------------------------------------------------
-     Formspree – Endpunkt des Anfrageformulars
+     Ladeverhalten des Google-Tags
+     ----------------------------------------------------------------
+     false (empfohlen, DSGVO-sicher):
+        gtag.js wird ERST nach dem Klick auf "Akzeptieren" geladen.
+        Vor der Einwilligung geht kein einziger Request an Google raus.
+
+     true (Googles Standardvorgabe):
+        gtag.js lädt sofort beim Seitenaufruf. Consent Mode v2 steht dabei
+        auf "denied", es werden also keine Werbe-Cookies gesetzt – Google
+        sendet aber cookielose Pings. Deutsche Aufsichtsbehörden sehen das
+        teilweise kritisch. Nur umstellen, wenn das bewusst gewollt ist.
+     ---------------------------------------------------------------- */
+  tagVorEinwilligungLaden: false,
+
+  /* ----------------------------------------------------------------
+     Formspree – Endpunkt der Formulare
      ---------------------------------------------------------------- */
   formspreeEndpoint: 'https://formspree.io/f/xjybbgee',
 };

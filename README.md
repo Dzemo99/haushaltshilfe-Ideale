@@ -47,7 +47,8 @@ Alternativ jeder beliebige statische Server, z. B. `npx serve .`.
 
 | Was | Datei |
 |---|---|
-| **Google-Ads-Conversion-ID + Labels** | `js/config.js` |
+| **Google-Ads-Conversion-Labels** | `js/config.js`, Zeilen 31–33 |
+| Google-Ads-Conversion-ID (`AW-17763019825`) | `js/config.js`, Zeile 14 – bereits eingetragen |
 | **GA4-Mess-ID** (optional) | `js/config.js` |
 | **Formspree-Endpunkt** | `js/config.js` (+ `action` am `<form>` in `index.html`) |
 | **Domain** (`https://IHRE-DOMAIN.de`) | `index.html`, `impressum.html`, `datenschutz.html`, `robots.txt`, `sitemap.xml` |
