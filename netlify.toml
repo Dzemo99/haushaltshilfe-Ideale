@@ -1,0 +1,89 @@
+# ==========================================================================
+# Netlify-Konfiguration – Ideale Haushaltshilfe
+# Statische Seite: kein Build-Schritt nötig, alles liegt im Wurzelverzeichnis.
+# ==========================================================================
+
+[build]
+  publish = "."
+  command = ""
+
+# --------------------------------------------------------------------------
+# Sicherheits-Header für alle Seiten
+# --------------------------------------------------------------------------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=(), interest-cohort=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+
+    # Content-Security-Policy
+    #   script-src  : eigene Skripte + Google-Tag (gtag.js)
+    #   connect-src : Formspree (Formularversand) + Google (Conversion-Pings)
+    #   img-src     : eigene Bilder, data:-URIs (Icons im CSS) + Google-Tracking-Pixel
+    #   'unsafe-inline' bei style-src: nötig für die wenigen inline-Styles im HTML
+    Content-Security-Policy = """
+      default-src 'self';
+      base-uri 'self';
+      form-action 'self' https://formspree.io;
+      frame-ancestors 'self';
+      object-src 'none';
+      script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com;
+      style-src 'self' 'unsafe-inline';
+      img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://www.google.de https://googleads.g.doubleclick.net;
+      font-src 'self' data:;
+      connect-src 'self' https://formspree.io https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://www.google.com https://googleads.g.doubleclick.net;
+      frame-src https://td.doubleclick.net https://www.googletagmanager.com;
+      upgrade-insecure-requests;
+    """
+
+# --------------------------------------------------------------------------
+# Caching: Bilder/CSS/JS lange cachen, HTML immer frisch ausliefern
+# --------------------------------------------------------------------------
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# --------------------------------------------------------------------------
+# Weiterleitungen
+# --------------------------------------------------------------------------
+
+# Saubere URLs: /impressum funktioniert genauso wie /impressum.html
+[[redirects]]
+  from = "/impressum"
+  to = "/impressum.html"
+  status = 301
+
+[[redirects]]
+  from = "/datenschutz"
+  to = "/datenschutz.html"
+  status = 301
+
+[[redirects]]
+  from = "/danke"
+  to = "/danke.html"
+  status = 301
+
+# Alles Unbekannte zurück auf die Startseite (statt einer nackten 404)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404

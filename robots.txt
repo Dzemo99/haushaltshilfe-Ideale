@@ -1,0 +1,11 @@
+# robots.txt – Ideale Haushaltshilfe
+# Die gesamte Seite darf indexiert werden.
+
+User-agent: *
+Allow: /
+
+# Bestätigungsseite gehört nicht in den Index
+Disallow: /danke.html
+
+# TODO: Domain eintragen
+Sitemap: https://IHRE-DOMAIN.de/sitemap.xml

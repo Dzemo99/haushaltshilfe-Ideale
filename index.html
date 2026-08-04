@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ==========================================================
+       TODO: Domain eintragen. Ersetze überall "https://IHRE-DOMAIN.de"
+       durch eure echte Domain (canonical, Open Graph, JSON-LD, sitemap.xml).
+       ========================================================== -->
+  <title>Haushaltshilfe Göttingen &amp; Region | Ideale Haushaltshilfe – Alltagsbegleitung</title>
+  <meta name="description" content="Ideale Haushaltshilfe in Göttingen und Region: Einkaufen, Reinigung, Begleitung zu Arztbesuchen und Spaziergänge. Zuverlässig, herzlich, feste Ansprechpartner. Jetzt kostenlos anfragen: 0551 29214304">
+  <link rel="canonical" href="https://IHRE-DOMAIN.de/">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1b2b5e">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="Ideale Haushaltshilfe">
+  <meta property="og:title" content="Haushaltshilfe &amp; Alltagsbegleitung in Göttingen und Region">
+  <meta property="og:description" content="Einkaufen, Reinigung, Begleitung zu Arztbesuchen, Spaziergänge – zuverlässig, herzlich und mit festen Ansprechpartnern. Jetzt kostenlos und unverbindlich anfragen.">
+  <meta property="og:url" content="https://IHRE-DOMAIN.de/">
+  <meta property="og:image" content="https://IHRE-DOMAIN.de/assets/hero.jpg">
+  <meta property="og:image:width" content="1540">
+  <meta property="og:image:height" content="700">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Haushaltshilfe &amp; Alltagsbegleitung in Göttingen und Region">
+  <meta name="twitter:description" content="Zuverlässige Unterstützung im Alltag – Einkaufen, Reinigung, Arztbegleitung, Spaziergänge.">
+  <meta name="twitter:image" content="https://IHRE-DOMAIN.de/assets/hero.jpg">
+
+  <!-- Favicons (aus dem Logo generiert) -->
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="assets/favicon-180.png">
+
+  <!-- Hero-Bild vorladen: verbessert den LCP-Wert spürbar -->
+  <link rel="preload" as="image" href="assets/hero.webp" fetchpriority="high">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- ==========================================================
+       Konfiguration + Einwilligung (Google Consent Mode v2).
+       Reihenfolge und "kein defer" sind wichtig: die Consent-Defaults
+       müssen stehen, BEVOR irgendein Google-Request rausgeht.
+       ========================================================== -->
+  <script src="js/config.js"></script>
+  <script src="js/consent.js"></script>
+
+  <!-- Strukturierte Daten für Google (lokale Suche / Knowledge Panel) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://IHRE-DOMAIN.de/#business",
+    "name": "Ideale Haushaltshilfe",
+    "slogan": "weil unser Herz mit schlägt",
+    "description": "Haushaltshilfe und Alltagsbegleitung in Göttingen und Region: Einkaufen, Reinigung, Begleitung zu Arztbesuchen und Spaziergänge.",
+    "url": "https://IHRE-DOMAIN.de/",
+    "logo": "https://IHRE-DOMAIN.de/assets/logo.png",
+    "image": "https://IHRE-DOMAIN.de/assets/hero.jpg",
+    "telephone": "+49 551 29214304",
+    "email": "jjidealsreinigungsdienst@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kasseler Landstr. 80",
+      "postalCode": "37081",
+      "addressLocality": "Göttingen",
+      "addressRegion": "Niedersachsen",
+      "addressCountry": "DE"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Göttingen" },
+      { "@type": "AdministrativeArea", "name": "Landkreis Göttingen" }
+    ],
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "07:00",
+      "closes": "19:00"
+    }],
+    "priceRange": "€€"
+  }
+  </script>
+  <!--
+    TODO (JSON-LD prüfen):
+    - PLZ 37081 bestätigen
+    - Öffnungszeiten: aktuell Mo–So 07:00–19:00 hinterlegt – bestätigen
+    - "aggregateRating"/"review" bewusst NICHT gesetzt: Bewertungs-Markup ist nur
+      mit echten, nachweisbaren Bewertungen zulässig.
+  -->
+</head>
+<body>
+
+<a class="skip-link" href="#hauptinhalt">Zum Inhalt springen</a>
+
+<!-- =========================================================
+     1) STICKY HEADER
+     ========================================================= -->
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="Ideale Haushaltshilfe – zum Seitenanfang">
+      <picture>
+        <source srcset="assets/logo.webp" type="image/webp">
+        <img src="assets/logo.png" alt="Logo Ideale Haushaltshilfe" width="700" height="477" class="brand-logo">
+      </picture>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#vorteile">Warum wir</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#einsatzgebiet">Einsatzgebiet</a>
+      <a href="#faq">FAQ</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-accent btn-call" href="tel:+4955129214304" data-conversion="anruf">
+        <svg aria-hidden="true" viewBox="0 0 24 24" class="icon"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .7-.2 1l-2.3 2.2z"/></svg>
+        <span>0551 29214304</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="hauptinhalt">
+
+  <!-- =========================================================
+       2) HERO
+       ========================================================= -->
+  <section class="hero" id="top">
+    <div class="hero-media">
+      <picture>
+        <source srcset="assets/hero.webp" type="image/webp">
+        <!-- Kein loading="lazy": Hero ist das LCP-Element und soll sofort laden -->
+        <img src="assets/hero.jpg" alt="Haushaltshilfe hilft einer älteren Dame beim Abtrocknen in der Küche" width="1540" height="700" fetchpriority="high" decoding="async">
+      </picture>
+    </div>
+
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <p class="hero-eyebrow">Haushaltshilfe &amp; Alltagsbegleitung</p>
+        <h1>Unterstützung im Alltag in&nbsp;Göttingen und Region – auf die man sich verlassen kann</h1>
+        <p class="hero-sub">
+          Einkaufen, Reinigen, Begleitung zu Arztbesuchen, Spaziergänge und vieles mehr.
+          Wir sind für Senioren, Familien und alle da, die im Alltag eine helfende Hand brauchen –
+          herzlich, zuverlässig und mit festen Ansprechpartnern.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn btn-accent btn-lg" href="#kontakt">Kostenlos &amp; unverbindlich anfragen</a>
+          <a class="btn btn-outline btn-lg" href="tel:+4955129214304" data-conversion="anruf">
+            <svg aria-hidden="true" viewBox="0 0 24 24" class="icon"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .7-.2 1l-2.3 2.2z"/></svg>
+            Jetzt anrufen
+          </a>
+        </div>
+
+        <ul class="trust-list">
+          <li>Über 486 Menschen betreut</li>
+          <li>Langjährige Erfahrung</li>
+          <li>Feste, vertraute Ansprechpartner</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       3) LEISTUNGEN
+       ========================================================= -->
+  <section class="section" id="leistungen">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">Unsere Leistungen</p>
+        <h2>Womit wir Sie im Alltag unterstützen</h2>
+        <p class="section-lead">
+          Jede Unterstützung stimmen wir individuell auf Ihren Bedarf ab – vom einmaligen Einsatz
+          bis zur festen wöchentlichen Begleitung.
+        </p>
+      </header>
+
+      <div class="cards">
+
+        <article class="card">
+          <img src="assets/leistung-einkaufen.webp" alt="Haushaltshilfe hilft einer Seniorin beim Einkaufen und Einladen der Einkäufe" width="800" height="534" loading="lazy" decoding="async" class="card-img">
+          <div class="card-body">
+            <h3>Einkaufen &amp; Einkaufshilfe</h3>
+            <p>Wir erledigen den Wocheneinkauf für Sie oder begleiten Sie beim Einkaufen – Sie bestimmen, was auf die Liste kommt.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="assets/leistung-reinigung.webp" alt="Frau saugt den Teppich in einem hellen Wohnzimmer" width="523" height="578" loading="lazy" decoding="async" class="card-img">
+          <div class="card-body">
+            <h3>Reinigung &amp; Haushalt</h3>
+            <p>Staubsaugen, Wischen, Bad und Küche, Ordnung schaffen: Wir sorgen dafür, dass Sie sich zu Hause rundum wohlfühlen.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="assets/ablauf-beratung.webp" alt="Beraterin im Gespräch mit einem älteren Ehepaar am Küchentisch" width="900" height="675" loading="lazy" decoding="async" class="card-img">
+          <div class="card-body">
+            <h3>Begleitung zu Arztbesuchen</h3>
+            <p>Wir holen Sie ab, begleiten Sie zum Termin und wieder nach Hause – damit Sie den Weg nicht allein gehen müssen.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="assets/gesellschaft.webp" alt="Betreuerin im freundlichen Gespräch mit einem älteren Herrn" width="400" height="267" loading="lazy" decoding="async" class="card-img">
+          <div class="card-body">
+            <h3>Spaziergänge &amp; Alltagsbegleitung</h3>
+            <p>Gemeinsam an die frische Luft, ein Gespräch, ein Kaffee: Zeit und Gesellschaft gehören für uns zur Unterstützung dazu.</p>
+          </div>
+        </article>
+
+        <!-- TODO: Die folgenden zwei Leistungen waren in den Firmendaten nur als
+             Vorschlag markiert. Bitte bestätigen oder löschen. -->
+        <article class="card">
+          <img src="assets/leistung-waesche.webp" alt="Haushaltshilfe legt gemeinsam mit einer Seniorin frische Wäsche zusammen" width="800" height="600" loading="lazy" decoding="async" class="card-img">
+          <div class="card-body">
+            <h3>Wäsche &amp; Bügeln</h3>
+            <p>Waschen, Trocknen, Zusammenlegen und Bügeln – damit der Wäschekorb nie zur Belastung wird.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="assets/ueber-uns.webp" alt="Zwei Frauen sitzen am Küchentisch und gehen gemeinsam Unterlagen durch" width="1000" height="667" loading="lazy" decoding="async" class="card-img">
+          <div class="card-body">
+            <h3>Boten- &amp; Behördengänge</h3>
+            <p>Post, Apotheke, Formulare: Wir übernehmen Wege und helfen beim Sortieren von Unterlagen.</p>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="cards-note">
+        Sie brauchen etwas, das hier nicht steht? Sprechen Sie uns einfach an – wir finden gemeinsam eine Lösung.
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       4) WARUM WIR / VORTEILE
+       ========================================================= -->
+  <section class="section section-tint" id="vorteile">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">Warum wir</p>
+        <h2>Warum Menschen uns vertrauen</h2>
+      </header>
+
+      <ul class="benefits">
+        <li class="benefit">
+          <span class="benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3zm-1 14-4-4 1.4-1.4L11 13.2l5.6-5.6L18 9l-7 7z"/></svg>
+          </span>
+          <div>
+            <h3>Zuverlässig &amp; pünktlich</h3>
+            <p>Vereinbarte Termine halten wir ein. Sie wissen immer, wann jemand kommt.</p>
+          </div>
+        </li>
+
+        <li class="benefit">
+          <span class="benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.3-9.2C1.3 8.1 3.4 5 6.7 5c2 0 3.5 1 4.3 2.2h2C13.8 6 15.3 5 17.3 5c3.3 0 5.4 3.1 4 6.8C19.5 16.4 12 21 12 21z"/></svg>
+          </span>
+          <div>
+            <h3>Herzlich &amp; auf Augenhöhe</h3>
+            <p>Wir nehmen uns Zeit. Bei uns geht es um Menschen, nicht nur um Aufgaben.</p>
+          </div>
+        </li>
+
+        <li class="benefit">
+          <span class="benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M16 11a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm-8 1a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm0 2c-2.3 0-6 1.2-6 3.5V20h7v-2.5c0-1 .5-2 1.4-2.8A11 11 0 0 0 8 14zm8 0c-2.7 0-8 1.3-8 4v2h16v-2c0-2.7-5.3-4-8-4z"/></svg>
+          </span>
+          <div>
+            <h3>Feste Ansprechpartner</h3>
+            <p>Kein ständiger Wechsel: Sie werden möglichst immer von denselben vertrauten Personen betreut.</p>
+          </div>
+        </li>
+
+        <li class="benefit">
+          <span class="benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 15h-2v-2h2zm0-4h-2V7h2z"/></svg>
+          </span>
+          <div>
+            <h3>Langjährige Erfahrung</h3>
+            <p>Über 486 Menschen haben wir bereits im Alltag begleitet – vom kurzen Einsatz bis zur langjährigen Betreuung.</p>
+          </div>
+        </li>
+
+        <li class="benefit">
+          <span class="benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 8-4v6h2V8L12 3zM6 12.2V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-3.8l-6 3-6-3z"/></svg>
+          </span>
+          <div>
+            <h3>Individuell abgestimmt</h3>
+            <p>Ob einmalig, wöchentlich oder täglich – Umfang und Rhythmus richten sich nach Ihrem Bedarf.</p>
+          </div>
+        </li>
+
+        <li class="benefit">
+          <span class="benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm4.7 7.7-5.4 5.4a1 1 0 0 1-1.4 0l-2.6-2.6 1.4-1.4 1.9 1.9 4.7-4.7z"/></svg>
+          </span>
+          <div>
+            <h3>Kostenlose Erstanfrage</h3>
+            <p>Wir besprechen in Ruhe, was Sie brauchen – unverbindlich und ohne Kosten.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       5) SO FUNKTIONIERT'S
+       ========================================================= -->
+  <section class="section" id="ablauf">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">So funktioniert's</p>
+        <h2>In drei Schritten zur Unterstützung</h2>
+      </header>
+
+      <ol class="steps">
+        <li class="step">
+          <span class="step-num" aria-hidden="true">1</span>
+          <h3>Anfrage stellen</h3>
+          <p>Rufen Sie uns an, schreiben Sie per WhatsApp oder füllen Sie das Formular aus. Ein paar Sätze genügen.</p>
+        </li>
+        <li class="step">
+          <span class="step-num" aria-hidden="true">2</span>
+          <h3>Kennenlernen &amp; Angebot</h3>
+          <p>Wir besprechen Ihren Bedarf, klären alle Fragen und machen Ihnen ein transparentes, unverbindliches Angebot.</p>
+        </li>
+        <li class="step">
+          <span class="step-num" aria-hidden="true">3</span>
+          <h3>Wir sind für Sie da</h3>
+          <p>Zum vereinbarten Termin steht Ihre feste Ansprechpartnerin oder Ihr Ansprechpartner vor der Tür.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       6) EINSATZGEBIET
+       ========================================================= -->
+  <section class="section section-tint" id="einsatzgebiet">
+    <div class="container split">
+      <div class="split-text">
+        <p class="eyebrow">Einsatzgebiet</p>
+        <h2>Für Sie da in Göttingen und der Region</h2>
+        <p>
+          Wir kommen zu Ihnen nach Hause – in Göttingen und den umliegenden Orten.
+          Sie sind sich nicht sicher, ob Ihr Wohnort dabei ist? Fragen Sie einfach kurz nach,
+          wir sagen Ihnen ehrlich, ob wir es einrichten können.
+        </p>
+        <!-- TODO: Ortsliste bestätigen bzw. ergänzen/kürzen. Aktuell sind die
+             gängigen Orte im Umkreis von Göttingen aufgeführt. -->
+        <ul class="area-list">
+          <li>Göttingen</li>
+          <li>Rosdorf</li>
+          <li>Bovenden</li>
+          <li>Friedland</li>
+          <li>Gleichen</li>
+          <li>Adelebsen</li>
+          <li>Dransfeld</li>
+          <li>Nörten-Hardenberg</li>
+          <li>Landkreis Göttingen</li>
+        </ul>
+        <a class="btn btn-accent" href="#kontakt">Wohnort prüfen lassen</a>
+      </div>
+      <div class="split-media">
+        <img src="assets/leistung-begleitung.webp" alt="Betreuerin stützt eine ältere Dame beim Aufstehen im Wohnzimmer" width="1200" height="500" loading="lazy" decoding="async">
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       7) KUNDENSTIMMEN
+       ========================================================= -->
+  <section class="section" id="stimmen">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">Kundenstimmen</p>
+        <h2>Was unsere Kundinnen und Kunden sagen</h2>
+      </header>
+
+      <!-- =====================================================================
+           TODO – WICHTIG: Das sind PLATZHALTER, keine echten Bewertungen.
+           Bitte durch echte, freigegebene Zitate ersetzen ODER die ganze
+           Sektion löschen. Erfundene Testimonials sind wettbewerbsrechtlich
+           unzulässig (irreführende Werbung, § 5 UWG).
+           ===================================================================== -->
+      <div class="quotes">
+        <figure class="quote">
+          <blockquote>TODO: Echtes Zitat einer Kundin / eines Kunden einfügen.</blockquote>
+          <figcaption>TODO: Name, Ort</figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>TODO: Echtes Zitat einer Kundin / eines Kunden einfügen.</blockquote>
+          <figcaption>TODO: Name, Ort</figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>TODO: Echtes Zitat einer Kundin / eines Kunden einfügen.</blockquote>
+          <figcaption>TODO: Name, Ort</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       8) PREISE
+       ========================================================= -->
+  <section class="section section-tint" id="preise">
+    <div class="container">
+      <div class="price-box">
+        <p class="eyebrow">Preise</p>
+        <h2>Transparente Preise – ohne Überraschungen</h2>
+        <!-- TODO: Sobald Richtpreise feststehen (z. B. "ab XX €/Std."), hier eintragen. -->
+        <p>
+          Was eine Unterstützung kostet, hängt davon ab, was Sie brauchen und wie oft wir kommen.
+          Deshalb rechnen wir nichts pauschal ab, sondern machen Ihnen ein klares, schriftliches Angebot –
+          <strong>kostenlos und unverbindlich</strong>. Was wir vereinbaren, gilt.
+        </p>
+        <div class="price-cta">
+          <a class="btn btn-accent btn-lg" href="#kontakt">Individuelles Angebot anfragen</a>
+          <a class="btn btn-outline btn-lg" href="tel:+4955129214304" data-conversion="anruf">Kurz durchrufen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       9) FAQ
+       ========================================================= -->
+  <section class="section" id="faq">
+    <div class="container container-narrow">
+      <header class="section-head">
+        <p class="eyebrow">Häufige Fragen</p>
+        <h2>Das werden wir oft gefragt</h2>
+      </header>
+
+      <div class="faq">
+        <details>
+          <summary>In welchem Gebiet sind Sie im Einsatz?</summary>
+          <p>Wir sind in Göttingen und der Region unterwegs, zum Beispiel in Rosdorf, Bovenden, Friedland, Gleichen und im übrigen Landkreis Göttingen. Rufen Sie kurz an – wir sagen Ihnen direkt, ob wir zu Ihnen kommen können.</p>
+        </details>
+
+        <details>
+          <summary>Was kostet die Unterstützung?</summary>
+          <!-- TODO: Konkrete Richtpreise ergänzen, sobald sie feststehen. -->
+          <p>Das hängt vom Umfang und der Häufigkeit ab. Sie erhalten von uns ein transparentes, unverbindliches Angebot, bevor irgendetwas startet. Es entstehen keine Kosten für die Anfrage oder das Gespräch.</p>
+        </details>
+
+        <details>
+          <summary>Kann ich Sie auch kurzfristig buchen?</summary>
+          <p>Wir versuchen, kurzfristige Anfragen möglich zu machen. Ob es klappt, hängt von der aktuellen Auslastung ab – fragen Sie einfach an, wir sagen Ihnen ehrlich Bescheid.</p>
+        </details>
+
+        <details>
+          <summary>Gibt es eine feste Vertragsbindung?</summary>
+          <!-- TODO: Bitte bestätigen, ob es wirklich keine Mindestlaufzeit gibt. -->
+          <p>Wir arbeiten flexibel: Sie entscheiden, ob Sie uns einmalig, regelmäßig oder nur für einen bestimmten Zeitraum brauchen. Die Details halten wir vorab schriftlich fest.</p>
+        </details>
+
+        <details>
+          <summary>Sind Sie versichert?</summary>
+          <!-- TODO: Bitte bestätigen und ggf. Versicherer/Deckungssumme ergänzen.
+               Ohne Bestätigung diese Frage lieber entfernen. -->
+          <p>TODO: Angaben zum Versicherungsschutz (z. B. Betriebshaftpflicht) ergänzen oder diese Frage entfernen.</p>
+        </details>
+
+        <details>
+          <summary>Wie kann ich bezahlen?</summary>
+          <!-- TODO: Zahlungsarten bestätigen (Überweisung / bar / Rechnung). -->
+          <p>TODO: Zahlungsarten eintragen, z. B. „Sie erhalten eine Rechnung und zahlen bequem per Überweisung."</p>
+        </details>
+
+        <details>
+          <summary>Übernimmt die Pflegekasse einen Teil der Kosten?</summary>
+          <!-- TODO: Nur beantworten, wenn ihr als Angebot zur Unterstützung im Alltag
+               nach § 45a SGB XI anerkannt seid. Sonst Frage entfernen. -->
+          <p>TODO: Bitte klären und eintragen. Diese Frage nur beibehalten, wenn eine Abrechnung über die Pflegekasse tatsächlich möglich ist.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       10) KONTAKT / ANFRAGE
+       ========================================================= -->
+  <section class="section section-contact" id="kontakt">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">Kontakt</p>
+        <h2>Jetzt kostenlos &amp; unverbindlich anfragen</h2>
+        <p class="section-lead">Schreiben Sie uns ein paar Zeilen – wir melden uns schnellstmöglich bei Ihnen zurück.</p>
+      </header>
+
+      <div class="contact-grid">
+
+        <!-- ---------- Formular ----------
+             Versand läuft über Formspree per AJAX (js/main.js) – kein Seitenwechsel.
+             Das action/method-Attribut greift als Fallback, wenn JavaScript aus ist. -->
+        <form class="form" id="anfrage-form" action="https://formspree.io/f/xjybbgee" method="POST">
+          <input type="hidden" name="_subject" value="Neue Anfrage über die Website – Ideale Haushaltshilfe">
+          <!-- Honeypot gegen Spam-Bots: für Menschen unsichtbar -->
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
+
+          <!-- Erfolgsmeldung – ersetzt nach erfolgreichem Versand die Felder -->
+          <div class="form-success" data-fs-success hidden tabindex="-1" role="status"></div>
+
+          <!-- Fehlermeldung -->
+          <div class="form-error" data-fs-error hidden role="alert"></div>
+
+          <div data-fs-fields>
+          <div class="field">
+            <label for="f-name">Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="f-name" name="name" autocomplete="name" required>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="f-telefon">Telefon <span aria-hidden="true">*</span></label>
+              <input type="tel" id="f-telefon" name="telefon" autocomplete="tel" required>
+            </div>
+            <div class="field">
+              <label for="f-email">E-Mail</label>
+              <input type="email" id="f-email" name="email" autocomplete="email">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f-leistung">Gewünschte Leistung</label>
+            <select id="f-leistung" name="leistung">
+              <option value="">Bitte auswählen …</option>
+              <option>Einkaufen &amp; Einkaufshilfe</option>
+              <option>Reinigung &amp; Haushalt</option>
+              <option>Begleitung zu Arztbesuchen</option>
+              <option>Spaziergänge &amp; Alltagsbegleitung</option>
+              <option>Wäsche &amp; Bügeln</option>
+              <option>Boten- &amp; Behördengänge</option>
+              <option>Etwas anderes / weiß ich noch nicht</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="f-nachricht">Ihre Nachricht <span aria-hidden="true">*</span></label>
+            <textarea id="f-nachricht" name="nachricht" rows="5" required placeholder="Wobei dürfen wir Sie unterstützen? Wie oft und ab wann?"></textarea>
+          </div>
+
+          <div class="field field-check">
+            <input type="checkbox" id="f-datenschutz" name="datenschutz" value="akzeptiert" required>
+            <label for="f-datenschutz">
+              Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a>
+              gelesen und akzeptiere sie. <span aria-hidden="true">*</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-accent btn-lg btn-block" data-fs-submit-btn>Anfrage abschicken</button>
+          <p class="form-note"><span aria-hidden="true">*</span> Pflichtfeld. Ihre Daten nutzen wir ausschließlich zur Beantwortung Ihrer Anfrage.</p>
+          </div><!-- /data-fs-fields -->
+        </form>
+
+        <!-- ---------- Direkter Kontakt ---------- -->
+        <aside class="contact-direct">
+          <h3>Lieber direkt sprechen?</h3>
+          <p>Wir sind täglich für Sie erreichbar.</p>
+
+          <a class="contact-line" href="tel:+4955129214304" data-conversion="anruf">
+            <span class="contact-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .7-.2 1l-2.3 2.2z"/></svg>
+            </span>
+            <span><strong>0551 29214304</strong><small>Anrufen</small></span>
+          </a>
+
+          <a class="contact-line" href="https://wa.me/4916095854323" target="_blank" rel="noopener" data-conversion="whatsapp">
+            <span class="contact-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a11 11 0 0 1-5.7-4.8c-.4-.7-.7-1.5-.7-2.2 0-.8.4-1.4.8-1.7.2-.2.4-.2.6-.2h.4c.2 0 .4 0 .5.4l.8 1.8c.1.2 0 .4-.1.5l-.4.5c-.1.2-.2.3 0 .6a8 8 0 0 0 3.4 2.8c.3.1.4.1.6-.1l.7-.8c.2-.2.3-.2.5-.1l1.7.9c.2.1.3.2.3.3 0 .1 0 .5-.2 1z"/></svg>
+            </span>
+            <span><strong>0160 95854323</strong><small>WhatsApp schreiben</small></span>
+          </a>
+
+          <a class="contact-line" href="mailto:jjidealsreinigungsdienst@gmail.com">
+            <span class="contact-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm8 7L4.5 6.5v.2L12 12l7.5-5.3v-.2L12 11z"/></svg>
+            </span>
+            <span><strong>E-Mail schreiben</strong><small>jjidealsreinigungsdienst@gmail.com</small></span>
+          </a>
+
+          <dl class="hours">
+            <dt>Erreichbarkeit</dt>
+            <!-- TODO: Bestätigen, ob wirklich täglich (7 Tage/Woche) 7–19 Uhr. -->
+            <dd>Täglich 7:00 – 19:00 Uhr</dd>
+            <dt>Adresse</dt>
+            <!-- TODO: PLZ bestätigen (vermutlich 37081). -->
+            <dd>Kasseler Landstr. 80<br>37081 Göttingen</dd>
+          </dl>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- =========================================================
+     11) FOOTER
+     ========================================================= -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+
+    <div class="footer-brand">
+      <span class="footer-logo">
+        <picture>
+          <source srcset="assets/logo.webp" type="image/webp">
+          <img src="assets/logo.png" alt="Logo Ideale Haushaltshilfe" width="700" height="477" loading="lazy" decoding="async">
+        </picture>
+      </span>
+      <p>Ihre Haushaltshilfe &amp; Alltagsbegleitung in Göttingen und Region – zuverlässig, herzlich, erfahren.</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Kontakt</h3>
+      <ul class="footer-list">
+        <li><a href="tel:+4955129214304" data-conversion="anruf">0551 29214304</a></li>
+        <li><a href="https://wa.me/4916095854323" target="_blank" rel="noopener" data-conversion="whatsapp">WhatsApp: 0160 95854323</a></li>
+        <li><a href="mailto:jjidealsreinigungsdienst@gmail.com">jjidealsreinigungsdienst@gmail.com</a></li>
+        <li>Kasseler Landstr. 80<br>37081 Göttingen</li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Leistungen</h3>
+      <ul class="footer-list">
+        <li><a href="#leistungen">Einkaufen &amp; Einkaufshilfe</a></li>
+        <li><a href="#leistungen">Reinigung &amp; Haushalt</a></li>
+        <li><a href="#leistungen">Begleitung zu Arztbesuchen</a></li>
+        <li><a href="#leistungen">Spaziergänge &amp; Alltagsbegleitung</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Service</h3>
+      <ul class="footer-list">
+        <li>Erreichbar täglich 7:00 – 19:00 Uhr</li>
+        <li>Einsatzgebiet: Göttingen &amp; Region</li>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+        <li><a href="#" data-consent-reset>Cookie-Einstellungen ändern</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="container footer-bottom">
+    <p>&copy; <span id="jahr">2026</span> Ideale Haushaltshilfe. Alle Rechte vorbehalten.</p>
+    <p class="footer-links">
+      <a href="impressum.html">Impressum</a> ·
+      <a href="datenschutz.html">Datenschutz</a>
+    </p>
+  </div>
+</footer>
+
+<!-- =========================================================
+     12) FLOATING CALL BUTTON (nur mobil sichtbar)
+     ========================================================= -->
+<a class="fab-call" href="tel:+4955129214304" data-conversion="anruf" aria-label="Jetzt anrufen: 0551 29214304">
+  <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .7-.2 1l-2.3 2.2z"/></svg>
+  <span>Jetzt anrufen</span>
+</a>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

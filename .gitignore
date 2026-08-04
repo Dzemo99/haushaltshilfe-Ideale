@@ -1,0 +1,28 @@
+# --- Werkzeuge & Abhängigkeiten (gehören nicht ins Deployment) ---
+.tools/
+node_modules/
+package-lock.json
+
+# --- Original-Bilder (unkomprimiert, nur lokales Archiv) ---
+_originale/
+
+# --- Betriebssystem ---
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# --- Editoren ---
+.vscode/
+.idea/
+*.swp
+*~
+
+# --- Netlify ---
+.netlify/
+
+# --- Logs & Temporäres ---
+*.log
+npm-debug.log*
+.env
+.env.local
