@@ -153,31 +153,6 @@ a:hover { color: var(--c-primary); }
 .btn-block { width: 100%; }
 
 /* ------------------------------------------------------------------
-   3b) ANKÜNDIGUNGSLEISTE (Top-Banner)
-   Steht ganz oben im <body>, vor dem Header – dadurch beim Öffnen der
-   Seite sofort sichtbar, ohne dass gescrollt werden muss.
-   Bewusst nicht sticky: sonst frisst sie auf dem Handy dauerhaft Platz.
-   ------------------------------------------------------------------ */
-/* Schlicht gehalten: kein Icon, keine farbige Fläche – nur fetter,
-   zentrierter Text als Titelzeile. Die feine Linie unten trennt die
-   Leiste optisch vom Header. */
-.topbar {
-  background: #fff;
-  border-bottom: 1px solid var(--c-border);
-}
-.topbar p {
-  margin: 0;
-  padding: 14px 0;
-  text-align: center;
-  font-size: clamp(1rem, 1.9vw, 1.22rem);
-  font-weight: 800;
-  line-height: 1.35;
-  letter-spacing: -.01em;
-  color: var(--c-primary);
-  text-wrap: balance;   /* umbricht die Zeile gleichmäßiger */
-}
-
-/* ------------------------------------------------------------------
    4) HEADER
    ------------------------------------------------------------------ */
 .site-header {
@@ -282,26 +257,18 @@ a:hover { color: var(--c-primary); }
   letter-spacing: .04em;
   text-transform: uppercase;
 }
-/* Kosten-Badge im Hero – soll sofort ins Auge fallen */
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin: 0 0 20px;
-  padding: .75em 1.15em;
-  border-radius: 14px;
-  background: var(--c-accent-light);
-  border: 2px solid var(--c-accent);
-  color: var(--c-accent-dark);
-  font-size: clamp(1rem, 1.6vw, 1.12rem);
-  font-weight: 600;
-  line-height: 1.35;
-  box-shadow: 0 4px 14px rgba(23, 153, 124, .16);
-}
-.hero-badge svg { flex: none; width: 26px; height: 26px; fill: var(--c-accent); }
-.hero-badge strong { font-weight: 800; color: var(--c-primary); }
-
 .hero h1 { margin-bottom: .45em; }
+
+/* Kostenhinweis unter der Überschrift – kein Kasten, kein Symbol.
+   Nur fetter Text in der Akzentfarbe, damit er sich klar abhebt. */
+.hero-kosten {
+  margin: 0 0 .9em;
+  color: var(--c-accent-dark);
+  font-size: clamp(1.05rem, 1.8vw, 1.22rem);
+  font-weight: 800;
+  line-height: 1.4;
+  max-width: 40ch;
+}
 .hero-sub {
   color: var(--c-text-muted);
   font-size: clamp(1.05rem, 2vw, 1.2rem);
@@ -886,11 +853,7 @@ a:hover { color: var(--c-primary); }
   body { font-size: 1.02rem; }
   .brand-logo { height: 42px; }
 
-  /* Ankündigungsleiste kompakter, aber weiterhin vollständig lesbar */
-  .topbar p { padding: 12px 0; font-size: .98rem; line-height: 1.38; }
-
-  .hero-badge { font-size: .98rem; padding: .7em 1em; gap: 9px; }
-  .hero-badge svg { width: 22px; height: 22px; }
+  .hero-kosten { font-size: 1.05rem; max-width: none; }
   /* Auf kleinen Displays nur das Telefon-Icon zeigen – spart Platz */
   .btn-call span { display: none; }
   .btn-call { padding: .7em .9em; }
