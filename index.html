@@ -90,6 +90,30 @@
 <a class="skip-link" href="#hauptinhalt">Zum Inhalt springen</a>
 
 <!-- =========================================================
+     0) ANKÜNDIGUNGSLEISTE
+     Erstes Element der Seite – ohne Scrollen sichtbar, auf allen Seiten.
+
+     TODO – WICHTIG: Diese Aussage setzt voraus, dass "Ideale Haushaltshilfe"
+     als Angebot zur Unterstützung im Alltag nach § 45a SGB XI landesrechtlich
+     anerkannt ist. Ohne diese Anerkennung erstattet die Pflegekasse den
+     Entlastungsbetrag nicht. Bitte vor dem Livegang bestätigen.
+     TODO: Betrag prüfen – der Entlastungsbetrag nach § 45b SGB XI liegt seit
+     dem 01.01.2025 bei 131 €/Monat. Vor Schaltung der Anzeigen den aktuell
+     gültigen Betrag gegenprüfen.
+     ========================================================= -->
+<aside class="topbar" aria-label="Hinweis zur Kostenübernahme durch die Pflegekasse">
+  <div class="container topbar-inner">
+    <svg class="topbar-icon" aria-hidden="true" viewBox="0 0 24 24">
+      <path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3zm-1 14-4-4 1.4-1.4L11 13.2l5.6-5.6L18 9l-7 7z"/>
+    </svg>
+    <p>
+      <strong>Für Pflegebedürftige KOSTENFREI</strong> – wir rechnen direkt mit Ihrer Pflegekasse ab.
+      Entlastungsbetrag nach § 45b SGB XI: <strong>131 €/Monat</strong>.
+    </p>
+  </div>
+</aside>
+
+<!-- =========================================================
      1) STICKY HEADER
      ========================================================= -->
 <header class="site-header" id="site-header">
@@ -135,6 +159,16 @@
 
       <div class="hero-text">
         <p class="hero-eyebrow">Haushaltshilfe &amp; Alltagsbegleitung</p>
+
+        <!-- Kosten-Badge: bewusst weit oben, damit es ohne Scrollen ins Auge fällt.
+             Siehe TODO-Hinweis bei der Ankündigungsleiste (§ 45a SGB XI). -->
+        <p class="hero-badge">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm4.7 7.7-5.4 5.4a1 1 0 0 1-1.4 0l-2.6-2.6 1.4-1.4 1.9 1.9 4.7-4.7z"/>
+          </svg>
+          <span>Kosten übernimmt die Pflegekasse – <strong>für Sie kostenfrei</strong></span>
+        </p>
+
         <h1>Unterstützung im Alltag in&nbsp;Göttingen und Region – auf die man sich verlassen kann</h1>
         <p class="hero-sub">
           Einkaufen, Reinigen, Begleitung zu Arztbesuchen, Spaziergänge und vieles mehr.
@@ -482,11 +516,17 @@
       <div class="price-box">
         <p class="eyebrow">Preise</p>
         <h2>Transparente Preise – ohne Überraschungen</h2>
-        <!-- TODO: Sobald Richtpreise feststehen (z. B. "ab XX €/Std."), hier eintragen. -->
+        <!-- TODO: Sobald Richtpreise für Selbstzahler feststehen (z. B. "ab XX €/Std."),
+             hier ergänzen. -->
         <p>
-          Was eine Unterstützung kostet, hängt davon ab, was Sie brauchen und wie oft wir kommen.
-          Deshalb rechnen wir nichts pauschal ab, sondern machen Ihnen ein klares, schriftliches Angebot –
-          <strong>kostenlos und unverbindlich</strong>. Was wir vereinbaren, gilt.
+          <strong>Mit Pflegegrad zahlen Sie in der Regel nichts.</strong> Wir rechnen den
+          Entlastungsbetrag nach § 45b SGB XI in Höhe von 131 € monatlich direkt mit Ihrer
+          Pflegekasse ab – Sie müssen nichts vorstrecken und bekommen keine Rechnung.
+        </p>
+        <p>
+          Ohne Pflegegrad oder für Leistungen darüber hinaus machen wir Ihnen ein klares,
+          schriftliches Angebot – <strong>kostenlos und unverbindlich</strong>. Was wir
+          vereinbaren, gilt.
         </p>
         <div class="price-cta">
           <a class="btn btn-accent btn-lg" href="#kontakt">Individuelles Angebot anfragen</a>
@@ -543,10 +583,28 @@
         </details>
 
         <details>
-          <summary>Übernimmt die Pflegekasse einen Teil der Kosten?</summary>
-          <!-- TODO: Nur beantworten, wenn ihr als Angebot zur Unterstützung im Alltag
-               nach § 45a SGB XI anerkannt seid. Sonst Frage entfernen. -->
-          <p>TODO: Bitte klären und eintragen. Diese Frage nur beibehalten, wenn eine Abrechnung über die Pflegekasse tatsächlich möglich ist.</p>
+          <summary>Übernimmt die Pflegekasse die Kosten?</summary>
+          <!-- TODO: Diese Antwort setzt die Anerkennung nach § 45a SGB XI voraus.
+               Bitte bestätigen, sonst Frage entfernen. -->
+          <p>
+            Ja. Wenn ein Pflegegrad vorliegt, steht Ihnen der <strong>Entlastungsbetrag nach
+            § 45b SGB XI</strong> zu – aktuell <strong>131 € pro Monat</strong>. Diesen Betrag
+            rechnen wir direkt mit Ihrer Pflegekasse ab. Für Sie ist unsere Unterstützung in
+            diesem Rahmen damit kostenfrei; Sie müssen nichts vorstrecken.
+          </p>
+          <p>
+            Nicht genutztes Guthaben verfällt nicht sofort: Es kann in das folgende Kalenderhalbjahr
+            übertragen werden. Wir schauen gemeinsam mit Ihnen, was Ihnen zusteht.
+          </p>
+        </details>
+
+        <details>
+          <summary>Ich habe noch keinen Pflegegrad – geht das trotzdem?</summary>
+          <p>
+            Selbstverständlich. Sie können uns auch ohne Pflegegrad ganz normal privat beauftragen.
+            Und wenn Sie glauben, dass Ihnen ein Pflegegrad zusteht, sprechen Sie uns an – wir
+            erklären Ihnen, wie die Antragstellung bei der Pflegekasse abläuft.
+          </p>
         </details>
       </div>
     </div>
