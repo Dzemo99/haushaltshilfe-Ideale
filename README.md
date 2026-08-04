@@ -47,8 +47,10 @@ Alternativ jeder beliebige statische Server, z. B. `npx serve .`.
 
 | Was | Datei |
 |---|---|
-| **Google-Ads-Conversion-Labels** | `js/config.js`, Zeilen 31–33 |
-| Google-Ads-Conversion-ID (`AW-17763019825`) | `js/config.js`, Zeile 14 – bereits eingetragen |
+| Google-Ads-Conversion-ID (`AW-17763019825`) | `js/config.js`, Zeile 14 – eingetragen |
+| Formular-Conversion (Lead) | `js/config.js`, Zeile 33 – **aktiv** |
+| Anruf-Conversion | `js/config.js`, Zeile 39 – auskommentiert, inaktiv |
+| WhatsApp-Conversion | `js/config.js`, Zeile 42 – auskommentiert, inaktiv |
 | **GA4-Mess-ID** (optional) | `js/config.js` |
 | **Formspree-Endpunkt** | `js/config.js` (+ `action` am `<form>` in `index.html`) |
 | **Domain** (`https://IHRE-DOMAIN.de`) | `index.html`, `impressum.html`, `datenschutz.html`, `robots.txt`, `sitemap.xml` |

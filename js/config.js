@@ -28,9 +28,18 @@ window.SITE_CONFIG = {
      NICHT gefeuert – so entstehen keine falschen Messwerte.
      ---------------------------------------------------------------- */
   conversionLabels: {
-    formular: 'FORMULAR_LABEL',    // <-- Conversion-Aktion "Lead / Formularanfrage"
-    anruf:    'ANRUF_LABEL',       // <-- Conversion-Aktion "Anruf (Klick auf Telefonnummer)"
-    whatsapp: 'WHATSAPP_LABEL',    // <-- optional: Conversion-Aktion "WhatsApp-Klick"
+    // AKTIV – Conversion-Aktion "Lead / Formularanfrage".
+    // Feuert im Erfolgsfall des Anfrageformulars.
+    formular: 'FiJvCLCV6vQbELHYiJZC',
+
+    // DEAKTIVIERT – Anruf-Conversion.
+    // Ohne Label wird nichts gemessen; die tel:-Links auf der Seite
+    // verhalten sich wie ganz normale Telefonlinks.
+    // Zum Aktivieren: Zeile einkommentieren und Label aus Google Ads einsetzen.
+    // anruf: 'ANRUF_LABEL',
+
+    // DEAKTIVIERT – optionale WhatsApp-Conversion.
+    // whatsapp: 'WHATSAPP_LABEL',
   },
 
   /* ----------------------------------------------------------------
