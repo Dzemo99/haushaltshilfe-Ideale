@@ -82,24 +82,28 @@
   });
 
   /* ----------------------------------------------------------------
-     5) ANFRAGEFORMULAR (Formspree via fetch)
+     5) FORMULARE (Formspree via fetch)
      Kein Seitenwechsel: Erfolg/Fehler werden direkt im Formular gemeldet.
      Ohne JavaScript greift das action/method-Attribut am <form> als Fallback.
-     ---------------------------------------------------------------- */
-  var form = document.getElementById('anfrage-form');
 
-  if (form && window.fetch) {
+     optionen:
+       dankeText     – Meldung nach erfolgreichem Versand
+       conversionTyp – falls gesetzt, wird diese Google-Ads-Conversion gefeuert
+     ---------------------------------------------------------------- */
+  function formularAktivieren(form, optionen) {
+    if (!form || !window.fetch) return;
+
     var successBox = form.querySelector('[data-fs-success]');
     var errorBox   = form.querySelector('[data-fs-error]');
     var submitBtn  = form.querySelector('[data-fs-submit-btn]');
     var fields     = form.querySelector('[data-fs-fields]');
     var btnText    = submitBtn ? submitBtn.textContent : '';
 
-    var meldungZeigen = function (box, text) {
+    function meldungZeigen(box, text) {
       if (!box) return;
       box.textContent = text;
       box.hidden = false;
-    };
+    }
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -113,7 +117,7 @@
         submitBtn.textContent = 'Wird gesendet …';
       }
 
-      fetch(CFG.formspreeEndpoint || form.action, {
+      fetch(form.action || CFG.formspreeEndpoint, {
         method: 'POST',
         body: new FormData(form),
         headers: { Accept: 'application/json' },
@@ -126,14 +130,10 @@
         .then(function (r) {
           if (!r.ok) throw r.daten;
 
-          // --- ERFOLG: das ist unsere Lead-Conversion ---
-          conversionFeuern('formular');
+          if (optionen.conversionTyp) conversionFeuern(optionen.conversionTyp);
 
           if (fields) fields.hidden = true;
-          meldungZeigen(
-            successBox,
-            'Vielen Dank! Ihre Anfrage ist bei uns angekommen. Wir melden uns schnellstmöglich bei Ihnen.'
-          );
+          meldungZeigen(successBox, optionen.dankeText);
           if (successBox) successBox.focus({ preventScroll: true });
           form.reset();
         })
@@ -153,4 +153,18 @@
         });
     });
   }
+
+  // Anfrageformular – der erfolgreiche Versand ist unsere Lead-Conversion
+  formularAktivieren(document.getElementById('anfrage-form'), {
+    dankeText: 'Vielen Dank! Ihre Anfrage ist bei uns angekommen. ' +
+               'Wir melden uns schnellstmöglich bei Ihnen.',
+    conversionTyp: 'formular',
+  });
+
+  // Bewertungsformular – bewusst OHNE Conversion (das ist kein Lead)
+  formularAktivieren(document.getElementById('bewertung-form'), {
+    dankeText: 'Herzlichen Dank für Ihre Bewertung! Wir freuen uns sehr über Ihre Rückmeldung ' +
+               'und lesen jede einzelne. Falls Sie der Veröffentlichung zugestimmt haben, ' +
+               'prüfen wir Ihre Bewertung und stellen sie anschließend online.',
+  });
 })();

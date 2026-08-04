@@ -3,7 +3,7 @@
 Statische Landingpage für **Ideale Haushaltshilfe** (Haushaltshilfe & Alltagsbegleitung
 in Göttingen und Region). Reines HTML/CSS/Vanilla-JS – kein Build-Schritt, kein Framework.
 
-**Live:** _TODO: Netlify-URL bzw. eigene Domain eintragen_
+**Live:** https://idealehaushaltshilfe.de _(Domain muss noch bei Netlify verbunden werden)_
 
 ---
 

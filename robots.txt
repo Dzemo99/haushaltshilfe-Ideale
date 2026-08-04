@@ -7,5 +7,4 @@ Allow: /
 # Bestätigungsseite gehört nicht in den Index
 Disallow: /danke.html
 
-# TODO: Domain eintragen
-Sitemap: https://IHRE-DOMAIN.de/sitemap.xml
+Sitemap: https://idealehaushaltshilfe.de/sitemap.xml

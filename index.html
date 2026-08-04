@@ -4,13 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- ==========================================================
-       TODO: Domain eintragen. Ersetze überall "https://IHRE-DOMAIN.de"
-       durch eure echte Domain (canonical, Open Graph, JSON-LD, sitemap.xml).
-       ========================================================== -->
   <title>Haushaltshilfe Göttingen &amp; Region | Ideale Haushaltshilfe – Alltagsbegleitung</title>
   <meta name="description" content="Ideale Haushaltshilfe in Göttingen und Region: Einkaufen, Reinigung, Begleitung zu Arztbesuchen und Spaziergänge. Zuverlässig, herzlich, feste Ansprechpartner. Jetzt kostenlos anfragen: 0551 29214304">
-  <link rel="canonical" href="https://IHRE-DOMAIN.de/">
+  <link rel="canonical" href="https://idealehaushaltshilfe.de/">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1b2b5e">
 
@@ -20,14 +16,14 @@
   <meta property="og:site_name" content="Ideale Haushaltshilfe">
   <meta property="og:title" content="Haushaltshilfe &amp; Alltagsbegleitung in Göttingen und Region">
   <meta property="og:description" content="Einkaufen, Reinigung, Begleitung zu Arztbesuchen, Spaziergänge – zuverlässig, herzlich und mit festen Ansprechpartnern. Jetzt kostenlos und unverbindlich anfragen.">
-  <meta property="og:url" content="https://IHRE-DOMAIN.de/">
-  <meta property="og:image" content="https://IHRE-DOMAIN.de/assets/hero.jpg">
+  <meta property="og:url" content="https://idealehaushaltshilfe.de/">
+  <meta property="og:image" content="https://idealehaushaltshilfe.de/assets/hero.jpg">
   <meta property="og:image:width" content="1540">
   <meta property="og:image:height" content="700">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Haushaltshilfe &amp; Alltagsbegleitung in Göttingen und Region">
   <meta name="twitter:description" content="Zuverlässige Unterstützung im Alltag – Einkaufen, Reinigung, Arztbegleitung, Spaziergänge.">
-  <meta name="twitter:image" content="https://IHRE-DOMAIN.de/assets/hero.jpg">
+  <meta name="twitter:image" content="https://idealehaushaltshilfe.de/assets/hero.jpg">
 
   <!-- Favicons (aus dem Logo generiert) -->
   <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
@@ -52,13 +48,13 @@
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://IHRE-DOMAIN.de/#business",
+    "@id": "https://idealehaushaltshilfe.de/#business",
     "name": "Ideale Haushaltshilfe",
     "slogan": "weil unser Herz mit schlägt",
     "description": "Haushaltshilfe und Alltagsbegleitung in Göttingen und Region: Einkaufen, Reinigung, Begleitung zu Arztbesuchen und Spaziergänge.",
-    "url": "https://IHRE-DOMAIN.de/",
-    "logo": "https://IHRE-DOMAIN.de/assets/logo.png",
-    "image": "https://IHRE-DOMAIN.de/assets/hero.jpg",
+    "url": "https://idealehaushaltshilfe.de/",
+    "logo": "https://idealehaushaltshilfe.de/assets/logo.png",
+    "image": "https://idealehaushaltshilfe.de/assets/hero.jpg",
     "telephone": "+49 551 29214304",
     "email": "jjidealsreinigungsdienst@gmail.com",
     "address": {
@@ -84,7 +80,6 @@
   </script>
   <!--
     TODO (JSON-LD prüfen):
-    - PLZ 37081 bestätigen
     - Öffnungszeiten: aktuell Mo–So 07:00–19:00 hinterlegt – bestätigen
     - "aggregateRating"/"review" bewusst NICHT gesetzt: Bewertungs-Markup ist nur
       mit echten, nachweisbaren Bewertungen zulässig.
@@ -132,16 +127,12 @@
   <!-- =========================================================
        2) HERO
        ========================================================= -->
+  <!-- Split-Layout: Text links, Foto rechts als eigene Bildspalte.
+       Auf dem Handy rutscht das Foto per CSS (order) nach oben.
+       Kein Overlay über dem Bild – der Text steht auf hellem Grund daneben. -->
   <section class="hero" id="top">
-    <div class="hero-media">
-      <picture>
-        <source srcset="assets/hero.webp" type="image/webp">
-        <!-- Kein loading="lazy": Hero ist das LCP-Element und soll sofort laden -->
-        <img src="assets/hero.jpg" alt="Haushaltshilfe hilft einer älteren Dame beim Abtrocknen in der Küche" width="1540" height="700" fetchpriority="high" decoding="async">
-      </picture>
-    </div>
+    <div class="container hero-grid">
 
-    <div class="container hero-inner">
       <div class="hero-text">
         <p class="hero-eyebrow">Haushaltshilfe &amp; Alltagsbegleitung</p>
         <h1>Unterstützung im Alltag in&nbsp;Göttingen und Region – auf die man sich verlassen kann</h1>
@@ -165,6 +156,15 @@
           <li>Feste, vertraute Ansprechpartner</li>
         </ul>
       </div>
+
+      <div class="hero-media">
+        <picture>
+          <source srcset="assets/hero.webp" type="image/webp">
+          <!-- Kein loading="lazy": Hero ist das LCP-Element und soll sofort laden -->
+          <img src="assets/hero.jpg" alt="Haushaltshilfe hilft einer älteren Dame beim Abtrocknen in der Küche" width="1540" height="700" fetchpriority="high" decoding="async">
+        </picture>
+      </div>
+
     </div>
   </section>
 
@@ -381,35 +381,96 @@
   </section>
 
   <!-- =========================================================
-       7) KUNDENSTIMMEN
+       7) BEWERTUNG ABGEBEN
+       Bewusst nur ein Formular – es werden keine Bewertungen und keine
+       Bewertungszahlen auf der Seite angezeigt.
        ========================================================= -->
-  <section class="section" id="stimmen">
-    <div class="container">
+  <section class="section" id="bewerten">
+    <div class="container container-narrow">
       <header class="section-head">
-        <p class="eyebrow">Kundenstimmen</p>
-        <h2>Was unsere Kundinnen und Kunden sagen</h2>
+        <p class="eyebrow">Ihre Meinung</p>
+        <h2>Bewerten Sie uns</h2>
+        <p class="section-lead">
+          Sie waren mit unserer Unterstützung zufrieden – oder etwas hat nicht gepasst?
+          Wir freuen uns über jede ehrliche Rückmeldung. Sie hilft uns, besser zu werden.
+        </p>
       </header>
 
-      <!-- =====================================================================
-           TODO – WICHTIG: Das sind PLATZHALTER, keine echten Bewertungen.
-           Bitte durch echte, freigegebene Zitate ersetzen ODER die ganze
-           Sektion löschen. Erfundene Testimonials sind wettbewerbsrechtlich
-           unzulässig (irreführende Werbung, § 5 UWG).
-           ===================================================================== -->
-      <div class="quotes">
-        <figure class="quote">
-          <blockquote>TODO: Echtes Zitat einer Kundin / eines Kunden einfügen.</blockquote>
-          <figcaption>TODO: Name, Ort</figcaption>
-        </figure>
-        <figure class="quote">
-          <blockquote>TODO: Echtes Zitat einer Kundin / eines Kunden einfügen.</blockquote>
-          <figcaption>TODO: Name, Ort</figcaption>
-        </figure>
-        <figure class="quote">
-          <blockquote>TODO: Echtes Zitat einer Kundin / eines Kunden einfügen.</blockquote>
-          <figcaption>TODO: Name, Ort</figcaption>
-        </figure>
-      </div>
+      <form class="form" id="bewertung-form" action="https://formspree.io/f/xjybbgee" method="POST">
+        <input type="hidden" name="_subject" value="Neue Bewertung über die Website – Ideale Haushaltshilfe">
+        <!-- Kennzeichnet die Einsendung in Formspree als Bewertung (statt Anfrage) -->
+        <input type="hidden" name="art" value="bewertung">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
+
+        <div class="form-success" data-fs-success hidden tabindex="-1" role="status"></div>
+        <div class="form-error" data-fs-error hidden role="alert"></div>
+
+        <div data-fs-fields>
+
+          <!-- Sterne: Radio-Buttons, per CSS als Sterne dargestellt.
+               Reihenfolge im HTML ist 5 -> 1, die Anzeige dreht CSS wieder um. -->
+          <fieldset class="stars">
+            <legend>Ihre Bewertung <span aria-hidden="true">*</span></legend>
+            <div class="stars-row">
+              <input type="radio" id="stern-5" name="sterne" value="5 von 5 Sternen" required>
+              <label for="stern-5" title="5 von 5 Sternen"><span class="sr-only">5 Sterne</span></label>
+
+              <input type="radio" id="stern-4" name="sterne" value="4 von 5 Sternen">
+              <label for="stern-4" title="4 von 5 Sternen"><span class="sr-only">4 Sterne</span></label>
+
+              <input type="radio" id="stern-3" name="sterne" value="3 von 5 Sternen">
+              <label for="stern-3" title="3 von 5 Sternen"><span class="sr-only">3 Sterne</span></label>
+
+              <input type="radio" id="stern-2" name="sterne" value="2 von 5 Sternen">
+              <label for="stern-2" title="2 von 5 Sternen"><span class="sr-only">2 Sterne</span></label>
+
+              <input type="radio" id="stern-1" name="sterne" value="1 von 5 Sternen">
+              <label for="stern-1" title="1 von 5 Sternen"><span class="sr-only">1 Stern</span></label>
+            </div>
+          </fieldset>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="b-name">Name <span aria-hidden="true">*</span></label>
+              <input type="text" id="b-name" name="name" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="b-ort">Ort <span class="label-optional">(optional)</span></label>
+              <input type="text" id="b-ort" name="ort" autocomplete="address-level2" placeholder="z. B. Göttingen">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="b-text">Ihre Bewertung <span aria-hidden="true">*</span></label>
+            <textarea id="b-text" name="bewertung" rows="5" required placeholder="Was hat Ihnen gefallen? Was können wir besser machen?"></textarea>
+          </div>
+
+          <div class="field field-check">
+            <input type="checkbox" id="b-veroeffentlichung" name="veroeffentlichung" value="einverstanden">
+            <label for="b-veroeffentlichung">
+              Ich bin damit einverstanden, dass meine Bewertung (Vorname, Ort und Text)
+              veröffentlicht werden darf.
+            </label>
+          </div>
+
+          <div class="field field-check">
+            <input type="checkbox" id="b-datenschutz" name="datenschutz" value="akzeptiert" required>
+            <label for="b-datenschutz">
+              Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a>
+              gelesen und akzeptiere sie. <span aria-hidden="true">*</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-accent btn-lg btn-block" data-fs-submit-btn>Bewertung abschicken</button>
+
+          <p class="form-note">
+            <span aria-hidden="true">*</span> Pflichtfeld. Jede Bewertung wird von uns gelesen und
+            vor einer möglichen Veröffentlichung geprüft. Ohne Ihr Einverständnis
+            veröffentlichen wir nichts.
+          </p>
+
+        </div>
+      </form>
     </div>
   </section>
 
@@ -598,7 +659,6 @@
             <!-- TODO: Bestätigen, ob wirklich täglich (7 Tage/Woche) 7–19 Uhr. -->
             <dd>Täglich 7:00 – 19:00 Uhr</dd>
             <dt>Adresse</dt>
-            <!-- TODO: PLZ bestätigen (vermutlich 37081). -->
             <dd>Kasseler Landstr. 80<br>37081 Göttingen</dd>
           </dl>
         </aside>
