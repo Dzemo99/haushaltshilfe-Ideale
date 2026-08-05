@@ -28,18 +28,18 @@ window.SITE_CONFIG = {
      NICHT gefeuert – so entstehen keine falschen Messwerte.
      ---------------------------------------------------------------- */
   conversionLabels: {
-    // AKTIV – Formular-Conversion.
+    // AKTIV – Conversion-Aktion "Formular Haushaltshilfe".
     // Feuert im Erfolgsfall des Anfrageformulars (Formspree-Antwort ok).
-    formular: 'i7a_CKPxo9wcELHYiJZC',
+    //
+    // ACHTUNG: Das Label beginnt mit einem BINDESTRICH ("-Gj9C…").
+    // Der gehört zum Label und darf beim Kopieren nicht wegfallen –
+    // sonst geht ein falsches send_to an Google und nichts wird gemessen.
+    formular: '-Gj9COqjoNwcELHYiJZC',
 
     // AKTIV – Anruf-Conversion.
     // Feuert beim Klick auf jeden tel:-Link (Header, Hero, Kontakt,
     // Footer, Floating-Button). Der Anruf startet dabei ganz normal.
     anruf: 'i7a_CKPxo9wcELHYiJZC',
-
-    // Hinweis: Formular und Anruf nutzen bewusst DASSELBE Label, laufen in
-    // Google Ads also auf eine gemeinsame Conversion-Aktion. Sollen beide
-    // getrennt auswertbar sein, hier zwei verschiedene Labels eintragen.
 
     // DEAKTIVIERT – optionale WhatsApp-Conversion.
     // whatsapp: 'WHATSAPP_LABEL',
