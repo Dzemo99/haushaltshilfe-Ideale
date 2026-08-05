@@ -28,15 +28,18 @@ window.SITE_CONFIG = {
      NICHT gefeuert – so entstehen keine falschen Messwerte.
      ---------------------------------------------------------------- */
   conversionLabels: {
-    // AKTIV – Conversion-Aktion "Lead / Formularanfrage".
-    // Feuert im Erfolgsfall des Anfrageformulars.
-    formular: 'FiJvCLCV6vQbELHYiJZC',
+    // AKTIV – Formular-Conversion.
+    // Feuert im Erfolgsfall des Anfrageformulars (Formspree-Antwort ok).
+    formular: 'i7a_CKPxo9wcELHYiJZC',
 
-    // DEAKTIVIERT – Anruf-Conversion.
-    // Ohne Label wird nichts gemessen; die tel:-Links auf der Seite
-    // verhalten sich wie ganz normale Telefonlinks.
-    // Zum Aktivieren: Zeile einkommentieren und Label aus Google Ads einsetzen.
-    // anruf: 'ANRUF_LABEL',
+    // AKTIV – Anruf-Conversion.
+    // Feuert beim Klick auf jeden tel:-Link (Header, Hero, Kontakt,
+    // Footer, Floating-Button). Der Anruf startet dabei ganz normal.
+    anruf: 'i7a_CKPxo9wcELHYiJZC',
+
+    // Hinweis: Formular und Anruf nutzen bewusst DASSELBE Label, laufen in
+    // Google Ads also auf eine gemeinsame Conversion-Aktion. Sollen beide
+    // getrennt auswertbar sein, hier zwei verschiedene Labels eintragen.
 
     // DEAKTIVIERT – optionale WhatsApp-Conversion.
     // whatsapp: 'WHATSAPP_LABEL',
