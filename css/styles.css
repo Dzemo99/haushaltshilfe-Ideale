@@ -11,7 +11,7 @@
    Navy = Schriftzug "Haushaltshilfe", Grün = Schriftzug "Ideale".
    ------------------------------------------------------------------ */
 :root {
-  /* Markenfarben – TODO: falls es offizielle Hex-Codes gibt, hier ersetzen */
+  /* Markenfarben – direkt aus dem Logo entnommen */
   --c-primary:        #1b2b5e;   /* Navy – Vertrauen */
   --c-primary-dark:   #131f45;
   --c-primary-light:  #2f4488;
@@ -701,16 +701,6 @@ a:hover { color: var(--c-primary); }
 }
 .legal-note p:last-child { margin-bottom: 0; }
 .legal-note strong { color: #8a5c00; }
-
-/* Markierung für fehlende Angaben direkt im Fließtext */
-.todo {
-  background: #ffe9a8;
-  border-bottom: 2px dashed #c98a00;
-  padding: 1px 6px;
-  border-radius: 4px;
-  font-weight: 700;
-  color: #7a4f00;
-}
 
 /* ------------------------------------------------------------------
    8) FOOTER

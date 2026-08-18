@@ -50,8 +50,9 @@ window.SITE_CONFIG = {
      Zu finden in GA4 unter: Verwaltung -> Datenstreams
      ---------------------------------------------------------------- */
 
-  // TODO (optional): GA4-Mess-ID eintragen, Format: 'G-XXXXXXXXXX'
-  // Leer lassen ('') wenn kein GA4 gewünscht ist.
+  // Bewusst leer: GA4 wird derzeit nicht eingesetzt.
+  // Wird hier eine Mess-ID ('G-XXXXXXXXXX') eingetragen, muss in datenschutz.html
+  // wieder ein eigener Abschnitt zu Google Analytics 4 ergaenzt werden.
   ga4MeasurementId: '',
 
   /* ----------------------------------------------------------------

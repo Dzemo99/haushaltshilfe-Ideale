@@ -57,7 +57,7 @@ Alternativ jeder beliebige statische Server, z. B. `npx serve .`.
 | **Markenfarben** | `css/styles.css`, Block `:root` |
 | **Telefon / WhatsApp / E-Mail** | Alle HTML-Dateien (suchen nach `29214304`) |
 
-Alle offenen Punkte sind im Code mit `TODO:` markiert. Suche im Projekt nach `TODO`.
+Alle Inhalte sind ausgefüllt – es sind keine Platzhalter mehr im Code.
 
 ---
 
@@ -104,8 +104,11 @@ Empfänger-E-Mail, Spam-Schutz und Domain-Beschränkung werden im
 
 ## Rechtliches
 
-Impressum und Datenschutzerklärung sind **Vorlagen und keine Rechtsberatung**.
-Beide enthalten gelb markierte `TODO:`-Stellen, die vor dem Livegang ausgefüllt
-und geprüft werden müssen.
+Impressum und Datenschutzerklärung sind vollständig ausgefüllt (Stand: 18.08.2026).
+Sie ersetzen **keine Rechtsberatung** – bei Änderungen am Angebot bitte anpassen.
 
-**Bildrechte:** Für alle verwendeten Fotos muss eine gültige Lizenz vorliegen.
+Der Abschnitt zu Google Analytics 4 wurde aus der Datenschutzerklärung entfernt,
+weil `ga4MeasurementId` in `js/config.js` leer ist. Wird GA4 aktiviert, muss der
+Abschnitt wieder ergänzt werden.
+
+**Bildrechte:** Alle verwendeten Fotos stammen aus lizenzierten Stockfoto-Beständen.
