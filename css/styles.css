@@ -800,6 +800,67 @@ a:hover { color: var(--c-primary); }
 .btn-ghost:hover { background: var(--c-bg-tint); color: var(--c-primary); border-color: var(--c-primary); }
 
 /* ------------------------------------------------------------------
+   9b) LANDINGPAGES (Unterseiten)
+   Häkchen-Liste für den Leistungsumfang und Karten zu weiteren Seiten.
+   ------------------------------------------------------------------ */
+.check-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 18px 28px;
+  list-style: none;
+  margin: 0 0 26px;
+  padding: 0;
+}
+.check-item {
+  position: relative;
+  padding: 20px 22px 20px 62px;
+  background: #fff;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+.check-item::before {
+  content: "";
+  position: absolute;
+  left: 22px;
+  top: 22px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--c-accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/16px no-repeat;
+}
+.check-item h3 { margin: 0 0 .3em; font-size: 1.08rem; }
+.check-item p  { margin: 0; color: var(--c-text-muted); font-size: .98rem; }
+.check-item a  { color: var(--c-accent-dark); font-weight: 700; }
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+.related-card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  color: var(--c-text);
+  text-decoration: none;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.related-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.related-card h3 { margin: 0 0 .4em; font-size: 1.1rem; color: var(--c-primary); }
+.related-card p  { margin: 0 0 1em; color: var(--c-text-muted); font-size: .97rem; }
+.related-more    { margin-top: auto; color: var(--c-accent-dark); font-weight: 700; }
+
+/* Leistungskarten der Startseite sind jetzt verlinkt */
+a.card { color: inherit; text-decoration: none; transition: transform .15s ease, box-shadow .15s ease; }
+a.card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.card-more { display: inline-block; margin-top: .6em; color: var(--c-accent-dark); font-weight: 700; }
+
+/* ------------------------------------------------------------------
    10) RESPONSIVE
    ------------------------------------------------------------------ */
 @media (max-width: 1000px) {

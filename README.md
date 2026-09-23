@@ -25,6 +25,10 @@ Alternativ jeder beliebige statische Server, z. B. `npx serve .`.
 ```
 /
 ├── index.html            Startseite (Hero, Leistungen, FAQ, Anfrageformular …)
+├── haushaltshilfe-pflegegrad.html  Landingpage Haushaltshilfe (Google Ads: Haushaltshilfe/Pflegegrad)
+├── einkaufshilfe.html    Landingpage Einkaufshilfe
+├── alltagsbegleitung.html Landingpage Alltagsbegleitung/Arztbegleitung
+├── entlastungsbetrag.html Ratgeber-/Landingpage Entlastungsbetrag 131 € (§ 45b)
 ├── danke.html            Bestätigungsseite (noindex)
 ├── impressum.html        Impressum nach § 5 DDG
 ├── datenschutz.html      Datenschutzerklärung (DSGVO)
@@ -58,6 +62,12 @@ Alternativ jeder beliebige statische Server, z. B. `npx serve .`.
 | **Telefon / WhatsApp / E-Mail** | Alle HTML-Dateien (suchen nach `29214304`) |
 
 Alle Inhalte sind ausgefüllt – es sind keine Platzhalter mehr im Code.
+
+**Landingpages:** Header, Footer und Kontaktformular sind in jeder Unterseite als Kopie enthalten
+(kein Build-Schritt). Änderungen an Telefon/Adresse daher in allen `*.html` nachziehen.
+Jede Unterseite hat eigenes `Service`- und `FAQPage`-Schema; das Formular schickt ein
+verstecktes Feld `quelle` mit (Name der Landingpage) – so sieht man in Formspree, woher die Anfrage kam.
+Saubere URLs (`/einkaufshilfe` statt `/einkaufshilfe.html`) sind in `netlify.toml` als Redirects hinterlegt.
 
 ---
 

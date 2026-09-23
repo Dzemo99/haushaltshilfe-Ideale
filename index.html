@@ -75,7 +75,88 @@
       "opens": "07:00",
       "closes": "19:00"
     }],
-    "priceRange": "€€"
+    "priceRange": "€€",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Unterstützung im Alltag nach § 45a SGB XI",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@id": "https://idealehaushaltshilfe.de/haushaltshilfe-pflegegrad.html#service" } },
+        { "@type": "Offer", "itemOffered": { "@id": "https://idealehaushaltshilfe.de/einkaufshilfe.html#service" } },
+        { "@type": "Offer", "itemOffered": { "@id": "https://idealehaushaltshilfe.de/alltagsbegleitung.html#service" } }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "In welchem Gebiet sind Sie im Einsatz?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wir sind in Göttingen und der Region unterwegs, zum Beispiel in Rosdorf, Bovenden, Friedland, Gleichen und im übrigen Landkreis Göttingen. Rufen Sie kurz an – wir sagen Ihnen direkt, ob wir zu Ihnen kommen können."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was kostet die Unterstützung?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mit Pflegegrad ist unsere Unterstützung im Rahmen des Entlastungsbetrags von 131 € monatlich für Sie kostenfrei – wir rechnen direkt mit der Pflegekasse ab. Ohne Pflegegrad hängt der Preis von Umfang und Häufigkeit ab. Sie erhalten vorab ein transparentes, unverbindliches Angebot. Für die Anfrage und das Gespräch entstehen Ihnen keine Kosten."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kann ich Sie auch kurzfristig buchen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wir versuchen, kurzfristige Anfragen möglich zu machen. Ob es klappt, hängt von der aktuellen Auslastung ab – fragen Sie einfach an, wir sagen Ihnen ehrlich Bescheid."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Gibt es eine feste Vertragsbindung?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nein. Es gibt bei uns keine Mindestlaufzeit und keine Kündigungsfrist. Sie entscheiden, ob Sie uns einmalig, regelmäßig oder nur für einen bestimmten Zeitraum brauchen. Die Details halten wir vorab schriftlich fest."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Sind Sie versichert?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Wir sind über eine Betriebshaftpflichtversicherung abgesichert. Sollte bei einem Einsatz doch einmal etwas zu Schaden kommen, ist das abgedeckt – Sie müssen sich darüber keine Gedanken machen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie kann ich bezahlen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mit Pflegegrad: Wir rechnen den Entlastungsbetrag direkt mit Ihrer Pflegekasse ab – Sie erhalten keine Rechnung und müssen nichts vorstrecken. Ohne Pflegegrad: Sie bekommen von uns eine schriftliche Rechnung, die Sie bequem per Überweisung begleichen. Barzahlung nach dem Einsatz ist ebenfalls möglich."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Übernimmt die Pflegekasse die Kosten?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Wenn ein Pflegegrad vorliegt, steht Ihnen der Entlastungsbetrag nach § 45b SGB XI zu – aktuell 131 € pro Monat. Diesen Betrag rechnen wir direkt mit Ihrer Pflegekasse ab. Für Sie ist unsere Unterstützung in diesem Rahmen damit kostenfrei; Sie müssen nichts vorstrecken. Nicht genutztes Guthaben verfällt nicht sofort: Es kann in das folgende Kalenderhalbjahr übertragen werden. Wir schauen gemeinsam mit Ihnen, was Ihnen zusteht."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ich habe noch keinen Pflegegrad – geht das trotzdem?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Selbstverständlich. Sie können uns auch ohne Pflegegrad ganz normal privat beauftragen. Und wenn Sie glauben, dass Ihnen ein Pflegegrad zusteht, sprechen Sie uns an – wir erklären Ihnen, wie die Antragstellung bei der Pflegekasse abläuft."
+        }
+      }
+    ]
   }
   </script>
   <!--
@@ -102,10 +183,10 @@
     </a>
 
     <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
-      <a href="#leistungen">Leistungen</a>
-      <a href="#vorteile">Warum wir</a>
-      <a href="#ablauf">Ablauf</a>
-      <a href="#einsatzgebiet">Einsatzgebiet</a>
+      <a href="haushaltshilfe-pflegegrad.html">Haushaltshilfe</a>
+      <a href="einkaufshilfe.html">Einkaufshilfe</a>
+      <a href="alltagsbegleitung.html">Alltagsbegleitung</a>
+      <a href="entlastungsbetrag.html">Entlastungsbetrag</a>
       <a href="#faq">FAQ</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
@@ -192,53 +273,59 @@
 
       <div class="cards">
 
-        <article class="card">
+        <a class="card" href="einkaufshilfe.html">
           <img src="assets/leistung-einkaufen.webp" alt="Haushaltshilfe hilft einer Seniorin beim Einkaufen und Einladen der Einkäufe" width="800" height="534" loading="lazy" decoding="async" class="card-img">
           <div class="card-body">
             <h3>Einkaufen &amp; Einkaufshilfe</h3>
             <p>Wir erledigen den Wocheneinkauf für Sie oder begleiten Sie beim Einkaufen – Sie bestimmen, was auf die Liste kommt.</p>
+            <span class="card-more">Mehr erfahren →</span>
           </div>
-        </article>
+        </a>
 
-        <article class="card">
+        <a class="card" href="haushaltshilfe-pflegegrad.html">
           <img src="assets/leistung-reinigung.webp" alt="Frau saugt den Teppich in einem hellen Wohnzimmer" width="523" height="578" loading="lazy" decoding="async" class="card-img">
           <div class="card-body">
             <h3>Reinigung &amp; Haushalt</h3>
             <p>Staubsaugen, Wischen, Bad und Küche, Ordnung schaffen: Wir sorgen dafür, dass Sie sich zu Hause rundum wohlfühlen.</p>
+            <span class="card-more">Mehr erfahren →</span>
           </div>
-        </article>
+        </a>
 
-        <article class="card">
+        <a class="card" href="alltagsbegleitung.html">
           <img src="assets/ablauf-beratung.webp" alt="Beraterin im Gespräch mit einem älteren Ehepaar am Küchentisch" width="900" height="675" loading="lazy" decoding="async" class="card-img">
           <div class="card-body">
             <h3>Begleitung zu Arztbesuchen</h3>
             <p>Wir holen Sie ab, begleiten Sie zum Termin und wieder nach Hause – damit Sie den Weg nicht allein gehen müssen.</p>
+            <span class="card-more">Mehr erfahren →</span>
           </div>
-        </article>
+        </a>
 
-        <article class="card">
+        <a class="card" href="alltagsbegleitung.html">
           <img src="assets/gesellschaft.webp" alt="Betreuerin im freundlichen Gespräch mit einem älteren Herrn" width="400" height="267" loading="lazy" decoding="async" class="card-img">
           <div class="card-body">
             <h3>Spaziergänge &amp; Alltagsbegleitung</h3>
             <p>Gemeinsam an die frische Luft, ein Gespräch, ein Kaffee: Zeit und Gesellschaft gehören für uns zur Unterstützung dazu.</p>
+            <span class="card-more">Mehr erfahren →</span>
           </div>
-        </article>
+        </a>
 
-        <article class="card">
+        <a class="card" href="haushaltshilfe-pflegegrad.html">
           <img src="assets/leistung-waesche.webp" alt="Haushaltshilfe legt gemeinsam mit einer Seniorin frische Wäsche zusammen" width="800" height="600" loading="lazy" decoding="async" class="card-img">
           <div class="card-body">
             <h3>Wäsche &amp; Bügeln</h3>
             <p>Waschen, Trocknen, Zusammenlegen und Bügeln – damit der Wäschekorb nie zur Belastung wird.</p>
+            <span class="card-more">Mehr erfahren →</span>
           </div>
-        </article>
+        </a>
 
-        <article class="card">
+        <a class="card" href="alltagsbegleitung.html">
           <img src="assets/ueber-uns.webp" alt="Zwei Frauen sitzen am Küchentisch und gehen gemeinsam Unterlagen durch" width="1000" height="667" loading="lazy" decoding="async" class="card-img">
           <div class="card-body">
             <h3>Boten- &amp; Behördengänge</h3>
             <p>Post, Apotheke, Formulare: Wir übernehmen Wege und helfen beim Sortieren von Unterlagen.</p>
+            <span class="card-more">Mehr erfahren →</span>
           </div>
-        </article>
+        </a>
 
       </div>
 
@@ -490,6 +577,7 @@
           <strong>Mit Pflegegrad zahlen Sie in der Regel nichts.</strong> Wir rechnen den
           Entlastungsbetrag nach § 45b SGB XI in Höhe von 131 € monatlich direkt mit Ihrer
           Pflegekasse ab – Sie müssen nichts vorstrecken und bekommen keine Rechnung.
+          <a href="entlastungsbetrag.html">Alles zum Entlastungsbetrag</a>
         </p>
         <p>
           Ohne Pflegegrad oder für Leistungen darüber hinaus machen wir Ihnen ein klares,
@@ -600,6 +688,7 @@
              Das action/method-Attribut greift als Fallback, wenn JavaScript aus ist. -->
         <form class="form" id="anfrage-form" action="https://formspree.io/f/xjybbgee" method="POST">
           <input type="hidden" name="_subject" value="Neue Anfrage über die Website – Ideale Haushaltshilfe">
+          <input type="hidden" name="quelle" value="startseite">
           <!-- Honeypot gegen Spam-Bots: für Menschen unsichtbar -->
           <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
 
@@ -727,10 +816,10 @@
     <div class="footer-col">
       <h3>Leistungen</h3>
       <ul class="footer-list">
-        <li><a href="#leistungen">Einkaufen &amp; Einkaufshilfe</a></li>
-        <li><a href="#leistungen">Reinigung &amp; Haushalt</a></li>
-        <li><a href="#leistungen">Begleitung zu Arztbesuchen</a></li>
-        <li><a href="#leistungen">Spaziergänge &amp; Alltagsbegleitung</a></li>
+        <li><a href="haushaltshilfe-pflegegrad.html">Haushaltshilfe mit Pflegegrad</a></li>
+        <li><a href="einkaufshilfe.html">Einkaufshilfe</a></li>
+        <li><a href="alltagsbegleitung.html">Alltagsbegleitung &amp; Arztbegleitung</a></li>
+        <li><a href="entlastungsbetrag.html">Entlastungsbetrag 131 €</a></li>
       </ul>
     </div>
 

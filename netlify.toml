@@ -93,6 +93,27 @@
   to = "/danke.html"
   status = 301
 
+# Landingpages – saubere URLs ohne .html (fuer Google Ads als Ziel-URL nutzbar)
+[[redirects]]
+  from = "/haushaltshilfe-pflegegrad"
+  to = "/haushaltshilfe-pflegegrad.html"
+  status = 301
+
+[[redirects]]
+  from = "/einkaufshilfe"
+  to = "/einkaufshilfe.html"
+  status = 301
+
+[[redirects]]
+  from = "/alltagsbegleitung"
+  to = "/alltagsbegleitung.html"
+  status = 301
+
+[[redirects]]
+  from = "/entlastungsbetrag"
+  to = "/entlastungsbetrag.html"
+  status = 301
+
 # Alles Unbekannte zurück auf die Startseite (statt einer nackten 404)
 [[redirects]]
   from = "/*"
