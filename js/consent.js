@@ -97,6 +97,16 @@
 
     gtag('js', new Date());
     if (hauptId) gtag('config', hauptId);
+
+    // Website-Anrufe (Conversion-Aktion "Anruf Website echt"):
+    // Google ersetzt die Nummer auf der Seite für Anzeigen-Besucher durch eine
+    // Weiterleitungsnummer und zählt echte Anrufe ab der eingestellten Dauer.
+    // Die Nummer muss exakt so geschrieben sein, wie sie auf der Seite steht.
+    var telLabel = (CFG.conversionLabels || {}).anrufWebsite || '';
+    if (hauptId && telLabel && !/_LABEL$/.test(telLabel)) {
+      gtag('config', hauptId + '/' + telLabel, { phone_conversion_number: '0551 29214304' });
+    }
+
     if (ga4Id)   gtag('config', ga4Id, { anonymize_ip: true });
   }
 

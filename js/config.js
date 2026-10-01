@@ -14,7 +14,7 @@ window.SITE_CONFIG = {
   adsConversionId: 'AW-17763019825',
 
   /* ----------------------------------------------------------------
-     >>> HIER DIE ZWEI LABELS EINSETZEN <<<
+     >>> HIER DIE LABELS EINSETZEN <<<
 
      Wo finde ich sie?
        Google Ads -> Tools -> Messung -> Conversions
@@ -29,17 +29,26 @@ window.SITE_CONFIG = {
      ---------------------------------------------------------------- */
   conversionLabels: {
     // AKTIV – Conversion-Aktion "Formular Haushaltshilfe".
-    // Feuert im Erfolgsfall des Anfrageformulars (Formspree-Antwort ok).
+    // Feuert im Erfolgsfall des Anfrageformulars und des Schnell-Checks
+    // (Formspree-Antwort ok).
     //
     // ACHTUNG: Das Label beginnt mit einem BINDESTRICH ("-Gj9C…").
     // Der gehört zum Label und darf beim Kopieren nicht wegfallen –
     // sonst geht ein falsches send_to an Google und nichts wird gemessen.
     formular: '-Gj9COqjoNwcELHYiJZC',
 
-    // AKTIV – Anruf-Conversion.
+    // AKTIV – Anruf-Klick (Conversion-Aktion "Anruf Haushaltshilfe").
     // Feuert beim Klick auf jeden tel:-Link (Header, Hero, Kontakt,
-    // Footer, Floating-Button). Der Anruf startet dabei ganz normal.
+    // Footer, Mobile-Bar). Der Anruf startet dabei ganz normal.
+    // Zählt nur den Klick, nicht das Telefonat – in Google Ads auf
+    // "sekundär" stellen, sobald "Anruf Website echt" Daten liefert.
     anruf: 'i7a_CKPxo9wcELHYiJZC',
+
+    // AKTIV – echte Anrufe über die Website (Conversion-Aktion "Anruf Website echt").
+    // Google ersetzt die Nummer 0551 29214304 für Anzeigen-Besucher durch eine
+    // Weiterleitungsnummer und zählt Anrufe ab 60 Sekunden.
+    // Wird in js/consent.js beim Laden des Google-Tags verwendet.
+    anrufWebsite: 'MNd8CInfq40dELHYiJZC',
 
     // DEAKTIVIERT – optionale WhatsApp-Conversion.
     // whatsapp: 'WHATSAPP_LABEL',
