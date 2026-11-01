@@ -33,7 +33,7 @@ npm run build    # Produktions-Build nach dist/
 ## Vor dem Livegang ausfüllen ⚠️
 
 - `build.js` → `SITE`: Domain, Telefon, E-Mail, Adresse, Inhaber, IK-Nummer
-- Kundenstimmen auf der Startseite (nur echte Bewertungen – § 5b UWG)
+- Kundenstimmen optional auf der Startseite ergänzen (nur echte Bewertungen mit schriftlicher Freigabe – § 5b UWG)
 - Stundensatz + Kündigungsfrist in der FAQ (`kostenuebernahme.html`)
 - Anerkennende Behörde / Aktenzeichen (`uber-uns.html`, `impressum.html`)
 - Impressum und Datenschutzerklärung rechtlich prüfen lassen
