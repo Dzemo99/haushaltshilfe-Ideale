@@ -34,6 +34,8 @@ const SITE = {
   hours: 'Mo – Fr 8:00 – 17:00 Uhr',
   ik: '460357682',
   year: new Date().getFullYear(),
+  // Neue Version je Build, damit Browser nie altes CSS/JS aus dem Cache nehmen
+  build: (process.env.COMMIT_REF || Date.now().toString(36)).slice(0, 8),
 };
 
 const ROOT = __dirname;
