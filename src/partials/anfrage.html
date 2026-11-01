@@ -1,0 +1,77 @@
+<!-- ============ ANFRAGE (Landingpages) ============ -->
+<section id="kontakt" class="section bg-navy-900 text-white" aria-labelledby="kontakt-titel">
+  <div class="container-page">
+    <div class="max-w-2xl">
+      <p class="eyebrow !text-brand-300">Kontakt</p>
+      <h2 id="kontakt-titel" class="h-section !text-white">Jetzt kostenlos &amp; unverbindlich anfragen</h2>
+      <p class="lead mt-4 !text-navy-100">Schreiben Sie uns ein paar Zeilen – wir melden uns schnellstmöglich bei Ihnen zurück.</p>
+    </div>
+    <div class="mt-10 grid gap-10 lg:grid-cols-12">
+      <form name="anfrage" method="POST" action="https://formspree.io/f/xjybbgee" data-formspree class="card text-navy-900 lg:col-span-8">
+        <input type="hidden" name="_subject" value="Neue Anfrage über die Website – Ideale Haushaltshilfe">
+        <input type="hidden" name="formular" value="anfrage">
+        <!-- Von welcher Landingpage kam die Anfrage? Erscheint in der Formspree-Mail. -->
+        <input type="hidden" name="quelle" value="{{page.quelle}}">
+        <p class="hidden" aria-hidden="true"><label>Nicht ausfüllen: <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
+        <div class="grid gap-5 sm:grid-cols-2">
+          <div class="sm:col-span-2">
+            <label for="f-name" class="form-label">Name <span aria-hidden="true" class="text-brand-700">*</span></label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required class="form-input">
+          </div>
+          <div>
+            <label for="f-telefon" class="form-label">Telefon <span aria-hidden="true" class="text-brand-700">*</span></label>
+            <input id="f-telefon" name="telefon" type="tel" autocomplete="tel" required class="form-input">
+          </div>
+          <div>
+            <label for="f-email" class="form-label">E-Mail <span class="font-normal text-navy-700">(optional)</span></label>
+            <input id="f-email" name="email" type="email" autocomplete="email" class="form-input">
+          </div>
+          <div>
+            <label for="f-leistung" class="form-label">Gewünschte Leistung</label>
+            <select id="f-leistung" name="leistung" class="form-input">
+              <option value="">Bitte auswählen …</option>
+              <option>Einkaufen &amp; Einkaufshilfe</option>
+              <option>Reinigung &amp; Haushalt</option>
+              <option>Begleitung zu Arztbesuchen</option>
+              <option>Spaziergänge &amp; Alltagsbegleitung</option>
+              <option>Wäsche &amp; Bügeln</option>
+              <option>Boten- &amp; Behördengänge</option>
+              <option>Etwas anderes / weiß ich noch nicht</option>
+            </select>
+          </div>
+          <div>
+            <label for="f-pflegegrad" class="form-label">Pflegegrad vorhanden?</label>
+            <select id="f-pflegegrad" name="pflegegrad" class="form-input">
+              <option value="">Bitte auswählen …</option>
+              <option>Ja, Pflegegrad 1</option>
+              <option>Ja, Pflegegrad 2 oder höher</option>
+              <option>Nein / beantragt</option>
+              <option>Weiß ich nicht</option>
+            </select>
+          </div>
+          <div class="sm:col-span-2">
+            <label for="f-nachricht" class="form-label">Ihre Nachricht <span aria-hidden="true" class="text-brand-700">*</span></label>
+            <textarea id="f-nachricht" name="nachricht" rows="5" required class="form-input"></textarea>
+          </div>
+        </div>
+        <div class="mt-6 border-t border-navy-100 pt-6">
+          <label class="flex items-start gap-3 leading-relaxed text-navy-800">
+            <input type="checkbox" name="datenschutz" required class="mt-1 h-5 w-5 shrink-0 accent-brand-700">
+            <span>Ich bin einverstanden, dass meine Angaben – einschließlich Gesundheitsangaben wie dem Pflegegrad – zur Bearbeitung meiner Anfrage gespeichert und verarbeitet werden. Die Einwilligung kann ich jederzeit widerrufen. Details in der <a href="datenschutz.html" class="font-semibold text-brand-700 underline underline-offset-2">Datenschutzerklärung</a>. <span aria-hidden="true" class="text-brand-700">*</span></span>
+          </label>
+          <button type="submit" class="btn-primary mt-6 w-full text-lg sm:w-auto">Anfrage abschicken</button>
+        </div>
+      </form>
+
+      <aside class="lg:col-span-4">
+        <h3 class="text-2xl font-semibold !text-white">Lieber direkt sprechen?</h3>
+        <a href="tel:{{site.phoneLink}}" class="mt-4 block font-serif text-3xl font-semibold text-white hover:underline">{{site.phone}}</a>
+        <p class="mt-4 text-navy-100">Mobil: <a href="tel:{{site.mobileLink}}" class="font-bold text-white hover:underline">{{site.mobile}}</a></p>
+        <p class="mt-2 text-navy-100"><a href="{{site.whatsappLink}}" target="_blank" rel="noopener" class="font-bold text-white hover:underline">WhatsApp schreiben</a></p>
+        <p class="mt-2 text-navy-100"><a href="mailto:{{site.email}}" class="hover:underline">{{site.email}}</a></p>
+        <p class="mt-6 text-navy-100">{{site.hours}}</p>
+        <p class="mt-2 text-navy-100">{{site.street}}<br>{{site.zip}} {{site.city}}</p>
+      </aside>
+    </div>
+  </div>
+</section>

@@ -18,7 +18,7 @@ const { spawn } = require('child_process');
 
 // ⚠️ PLATZHALTER – bitte mit Ihren echten Daten ersetzen
 const SITE = {
-  url: 'https://www.ideale-haushaltshilfe.de',
+  url: 'https://idealehaushaltshilfe.de',
   name: 'Ideale Haushaltshilfe',
   slogan: 'weil unser Herz mit schlägt',
   owner: 'Nestor Schulz',
@@ -32,7 +32,7 @@ const SITE = {
   zip: '37081',
   city: 'Göttingen',
   hours: 'Mo – Fr 8:00 – 17:00 Uhr',
-  ik: '46035762',
+  ik: '460357682',
   year: new Date().getFullYear(),
 };
 
@@ -82,6 +82,7 @@ function build() {
     head: read(path.join(SRC, 'partials', 'head.html')),
     header: read(path.join(SRC, 'partials', 'header.html')),
     footer: read(path.join(SRC, 'partials', 'footer.html')),
+    anfrage: read(path.join(SRC, 'partials', 'anfrage.html')),
   };
 
   const sitemap = [];
@@ -90,7 +91,10 @@ function build() {
     const metaMatch = raw.match(/^<!--\s*meta\s*(\{[\s\S]*?\})\s*-->/);
     if (!metaMatch) throw new Error(`${file}: Meta-Block <!-- meta {...} --> fehlt am Dateianfang`);
     const meta = JSON.parse(metaMatch[1]);
-    const content = raw.slice(metaMatch[0].length);
+    const content = raw.slice(metaMatch[0].length).replace(
+      '<!-- partial:anfrage -->',
+      partials.anfrage.replace(`<option>${meta.leistung}</option>`, `<option selected>${meta.leistung}</option>`)
+    );
 
     const slug = file === 'index.html' ? '' : file;
     const page = {
@@ -119,7 +123,8 @@ ${partials.footer}
 </body>
 </html>
 `;
-    fs.writeFileSync(path.join(DIST, file), fill(html, { site: SITE, page }));
+    // Zweimal füllen: Meta-Texte dürfen selbst {{site.xyz}} enthalten
+    fs.writeFileSync(path.join(DIST, file), fill(fill(html, { site: SITE, page }), { site: SITE, page }));
     if (!meta.noindex) sitemap.push({ loc: page.canonical, priority: meta.priority || '0.7' });
   }
 
@@ -134,7 +139,7 @@ ${sitemap
 </urlset>
 `
   );
-  fs.writeFileSync(path.join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE.url}/sitemap.xml\n`);
+  fs.writeFileSync(path.join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\n\n# Bestätigungsseite gehört nicht in den Index\nDisallow: /danke.html\n\nSitemap: ${SITE.url}/sitemap.xml\n`);
 
   console.log(`✔ ${sitemap.length} Seiten nach dist/ gebaut`);
 }

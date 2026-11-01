@@ -2,6 +2,42 @@
 (function () {
   'use strict';
 
+  var CFG = window.SITE_CONFIG || {};
+
+  // Google-Ads-Conversion – feuert nur mit Einwilligung, geladenem Tag und echtem Label.
+  // fertig() läuft danach immer, auch wenn nichts gemessen wird (für die Weiterleitung).
+  function conversionFeuern(typ, fertig) {
+    var erledigt = false;
+    var weiter = function () {
+      if (erledigt) return;
+      erledigt = true;
+      if (fertig) fertig();
+    };
+    var adsId = CFG.adsConversionId || '';
+    var label = (CFG.conversionLabels || {})[typ] || '';
+    var erlaubt =
+      typeof window.hatEinwilligung === 'function' && window.hatEinwilligung() &&
+      typeof window.gtag === 'function' &&
+      adsId && adsId.indexOf('AW-X') !== 0 &&
+      label && !/_LABEL$/.test(label) && label.indexOf('TODO') !== 0;
+
+    if (!erlaubt) return weiter();
+    window.gtag('event', 'conversion', { send_to: adsId + '/' + label, event_callback: weiter });
+    setTimeout(weiter, 800);
+  }
+  window.conversionFeuern = conversionFeuern;
+
+  // Anruf- und WhatsApp-Klicks zählen; der Klick selbst wird nicht abgefangen
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('a[href], [data-conversion]');
+    if (!el) return;
+    var href = (el.getAttribute('href') || '').toLowerCase();
+    var typ = el.getAttribute('data-conversion');
+    if (!typ && href.indexOf('tel:') === 0) typ = 'anruf';
+    if (!typ && (href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1)) typ = 'whatsapp';
+    if (typ) conversionFeuern(typ);
+  });
+
   // Mobiles Menü
   var toggle = document.querySelector('[data-menu-toggle]');
   var menu = document.getElementById('mobile-menu');
@@ -48,7 +84,9 @@
       })
         .then(function (res) {
           if (!res.ok) throw new Error('HTTP ' + res.status);
-          window.location.href = 'danke.html';
+          conversionFeuern('formular', function () {
+            window.location.href = 'danke.html';
+          });
         })
         .catch(function () {
           status.textContent =

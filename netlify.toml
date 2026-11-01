@@ -23,3 +23,39 @@
   for = "/images/*"
   [headers.values]
     Cache-Control = "public, max-age=604800"
+
+# Saubere URLs ohne .html (Landingpages sind Ziel-URLs in Google Ads)
+[[redirects]]
+  from = "/impressum"
+  to = "/impressum.html"
+  status = 301
+
+[[redirects]]
+  from = "/datenschutz"
+  to = "/datenschutz.html"
+  status = 301
+
+[[redirects]]
+  from = "/danke"
+  to = "/danke.html"
+  status = 301
+
+[[redirects]]
+  from = "/haushaltshilfe-pflegegrad"
+  to = "/haushaltshilfe-pflegegrad.html"
+  status = 301
+
+[[redirects]]
+  from = "/einkaufshilfe"
+  to = "/einkaufshilfe.html"
+  status = 301
+
+[[redirects]]
+  from = "/alltagsbegleitung"
+  to = "/alltagsbegleitung.html"
+  status = 301
+
+[[redirects]]
+  from = "/entlastungsbetrag"
+  to = "/entlastungsbetrag.html"
+  status = 301
