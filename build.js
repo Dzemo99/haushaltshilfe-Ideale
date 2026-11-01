@@ -32,7 +32,7 @@ const SITE = {
   zip: '31134',
   city: 'Hildesheim',
   hours: 'Mo – Fr 8:00 – 17:00 Uhr',
-  ik: '000000000',
+  ik: '46035762',
   year: new Date().getFullYear(),
 };
 
