@@ -25,6 +25,9 @@
     #                 gibt es hier bewusst nicht – ohne diese Direktive faellt
     #                 der Browser auf script-src zurueck, der Eintrag oben
     #                 deckt die script-src-elem-Meldung also mit ab.
+    #                 www.gstatic.com: Googles Website-Call-Metrics-Loader (/wcm/loader.js)
+    #                 fuer das Anruf-Tracking (Rufnummern-Austausch) wird von dort geladen;
+    #                 seine Folge-Requests brauchen gstatic.com auch in connect-src und img-src.
     #   connect-src : Formspree (Formularversand) + Google (Conversion-Pings).
     #                 ad.doubleclick.net wird fuer /ccm/s/collect gebraucht,
     #                 pagead2.googlesyndication.com fuer Remarketing-Beacons.
@@ -36,11 +39,11 @@
       form-action 'self' https://formspree.io;
       frame-ancestors 'self';
       object-src 'none';
-      script-src 'self' https://www.googletagmanager.com https://www.googleadservices.com https://www.google-analytics.com https://googleads.g.doubleclick.net;
+      script-src 'self' https://www.googletagmanager.com https://www.googleadservices.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.gstatic.com;
       style-src 'self' 'unsafe-inline';
-      img-src 'self' data: https://www.googletagmanager.com https://www.googleadservices.com https://www.google-analytics.com https://www.google.com https://www.google.de https://googleads.g.doubleclick.net https://stats.g.doubleclick.net;
+      img-src 'self' data: https://www.googletagmanager.com https://www.googleadservices.com https://www.google-analytics.com https://www.google.com https://www.google.de https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://www.gstatic.com;
       font-src 'self' data:;
-      connect-src 'self' https://formspree.io https://www.googletagmanager.com https://www.googleadservices.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://www.google.com https://www.google.de https://googleads.g.doubleclick.net https://ad.doubleclick.net https://pagead2.googlesyndication.com;
+      connect-src 'self' https://formspree.io https://www.googletagmanager.com https://www.googleadservices.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://www.google.com https://www.google.de https://googleads.g.doubleclick.net https://ad.doubleclick.net https://pagead2.googlesyndication.com https://www.gstatic.com;
       frame-src https://td.doubleclick.net https://www.googletagmanager.com https://www.googleadservices.com;
       upgrade-insecure-requests;
     """
