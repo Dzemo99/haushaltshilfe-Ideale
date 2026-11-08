@@ -4,7 +4,8 @@
 
   var CFG = window.SITE_CONFIG || {};
 
-  // Google-Ads-Conversion – feuert nur mit Einwilligung, geladenem Tag und echtem Label.
+  // Google-Ads-Conversion – feuert, sobald das Tag geladen ist und ein echtes Label vorliegt.
+  // Ob mit Cookies (nach Zustimmung) oder cookielos (davor), entscheidet Google Consent Mode v2.
   // fertig() läuft danach immer, auch wenn nichts gemessen wird (für die Weiterleitung).
   function conversionFeuern(typ, fertig) {
     var erledigt = false;
@@ -16,7 +17,6 @@
     var adsId = CFG.adsConversionId || '';
     var label = (CFG.conversionLabels || {})[typ] || '';
     var erlaubt =
-      typeof window.hatEinwilligung === 'function' && window.hatEinwilligung() &&
       typeof window.gtag === 'function' &&
       adsId && adsId.indexOf('AW-X') !== 0 &&
       label && !/_LABEL$/.test(label) && label.indexOf('TODO') !== 0;
