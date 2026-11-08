@@ -77,7 +77,9 @@ window.SITE_CONFIG = {
         sendet aber cookielose Pings. Deutsche Aufsichtsbehörden sehen das
         teilweise kritisch. Nur umstellen, wenn das bewusst gewollt ist.
      ---------------------------------------------------------------- */
-  tagVorEinwilligungLaden: false,
+  // Umgestellt am 08.11.2026: Tag lädt sofort mit Consent Mode v2 (Defaults "denied"),
+  // damit Website-Anrufe und Formular-Conversions in Google Ads auch ohne Banner-Klick gemessen werden.
+  tagVorEinwilligungLaden: true,
 
   /* ----------------------------------------------------------------
      Formspree – Endpunkt der Formulare
