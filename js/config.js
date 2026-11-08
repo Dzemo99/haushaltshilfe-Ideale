@@ -44,11 +44,12 @@ window.SITE_CONFIG = {
     // "sekundär" stellen, sobald "Anruf Website echt" Daten liefert.
     anruf: 'i7a_CKPxo9wcELHYiJZC',
 
-    // AKTIV – echte Anrufe über die Website (Conversion-Aktion "Anruf Website echt").
+    // AKTIV – echte Anrufe über die Website (Conversion-Aktion "Website-Anruf 60s").
+    // (neu angelegt am 08.11.2026, alte Aktion vergab keine Weiterleitungsnummer)
     // Google ersetzt die Nummer 0551 29214304 für Anzeigen-Besucher durch eine
     // Weiterleitungsnummer und zählt Anrufe ab 60 Sekunden.
     // Wird in js/consent.js beim Laden des Google-Tags verwendet.
-    anrufWebsite: 'MNd8CInfq40dELHYiJZC',
+    anrufWebsite: 'vMr3CKuiyrQdELHYiJZC',
 
     // DEAKTIVIERT – optionale WhatsApp-Conversion.
     // whatsapp: 'WHATSAPP_LABEL',
