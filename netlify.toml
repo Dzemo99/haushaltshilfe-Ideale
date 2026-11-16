@@ -5,7 +5,7 @@
 
 [build]
   publish = "."
-  command = ""
+  command = "echo fertig"
 
 # --------------------------------------------------------------------------
 # Sicherheits-Header für alle Seiten
