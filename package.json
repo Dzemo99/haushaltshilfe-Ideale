@@ -1,0 +1,7 @@
+{
+  "name": "ideale-haushaltshilfe",
+  "private": true,
+  "scripts": {
+    "build": "node build-dist.js"
+  }
+}

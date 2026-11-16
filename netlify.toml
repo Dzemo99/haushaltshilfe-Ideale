@@ -4,8 +4,8 @@
 # ==========================================================================
 
 [build]
-  publish = "."
-  command = "echo fertig"
+  publish = "dist"
+  command = "node build-dist.js"
 
 # --------------------------------------------------------------------------
 # Sicherheits-Header für alle Seiten
